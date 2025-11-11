@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Professional Drain Cleaning Services in the US | GD Professional Plumbing',
-  description: 'Professional drain cleaning services across the USA. Fast and effective cleaning for clogged sinks, tubs, and sewer lines. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Hydro Jetting & Drain Cleaning Services | United Plumbing CCTX',
+  description: 'Clear clogs fast with United Plumbing CCTX. We provide snake, auger, and hydro-jet drain cleaning for homes and businesses across the United States.',
   keywords: [
     'drain cleaning',
     'drain cleaning services',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'drain cleaning service'
   ],
   openGraph: {
-    title: 'Professional Drain Cleaning Services in the US | GD Professional Plumbing',
-    description: 'Professional drain cleaning services across the USA. Fast and effective cleaning for clogged sinks, tubs, and sewer lines. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-drain-cleaning',
-    siteName: 'GD Professional Plumbing',
+    title: 'Hydro Jetting & Drain Cleaning Services | United Plumbing CCTX',
+    description: 'Clear clogs fast with United Plumbing CCTX. We provide snake, auger, and hydro-jet drain cleaning for homes and businesses across the United States.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-drain-cleaning',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Professional Drain Cleaning Services in the US | GD Professional Plumbing',
-    description: 'Professional drain cleaning services across the USA. Fast and effective cleaning for clogged sinks, tubs, and sewer lines. Licensed, insured, and trusted since 1973.',
+    title: 'Hydro Jetting & Drain Cleaning Services | United Plumbing CCTX',
+    description: 'Clear clogs fast with United Plumbing CCTX. We provide snake, auger, and hydro-jet drain cleaning for homes and businesses across the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-drain-cleaning',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-drain-cleaning',
   },
 };
 
@@ -53,7 +53,7 @@ export default function ProfessionalDrainCleaningPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/plumber%20clearing%20blocked%20sink%20with%20water?updatedAt=1756066954284" 
             alt="Professional drain cleaning services"
@@ -107,7 +107,7 @@ export default function ProfessionalDrainCleaningPage() {
                 Are you searching for expert drain cleaning services in the US?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert in the USA. We provide comprehensive drain cleaning solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert in the USA. We provide comprehensive drain cleaning solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -166,7 +166,7 @@ export default function ProfessionalDrainCleaningPage() {
             Drain Cleaning Services We Offer
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-            GD Professional Plumbing Helps You with All Your Drain Cleaning Projects including:
+            United Plumbing CCTX Helps You with All Your Drain Cleaning Projects including:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,7 +180,7 @@ export default function ProfessionalDrainCleaningPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Kitchen Drain Cleaning</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Fast and effective cleaning for clogged kitchen sinks and garbage disposals—restore smooth drainage quickly.
+                  Call United Plumbing CCTX at (833) 609-0936. Fast and effective cleaning for clogged kitchen sinks and garbage disposals—restore smooth drainage quickly.
                 </p>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function ProfessionalDrainCleaningPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Bathroom Drain Cleaning</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Professional cleaning for shower drains, bathtub drains, and bathroom sinks—eliminate blockages and odors.
+                  Call United Plumbing CCTX at (833) 609-0936. Professional cleaning for shower drains, bathtub drains, and bathroom sinks—eliminate blockages and odors.
                 </p>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function ProfessionalDrainCleaningPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Sewer Line Cleaning</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Advanced sewer line cleaning and inspection—prevent backups and ensure proper waste flow.
+                  Call United Plumbing CCTX at (833) 609-0936. Advanced sewer line cleaning and inspection—prevent backups and ensure proper waste flow.
                 </p>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function ProfessionalDrainCleaningPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Emergency Drain Cleaning</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. 24/7 emergency drain cleaning services—rapid response for urgent drainage issues.
+                  Call United Plumbing CCTX at (833) 609-0936. 24/7 emergency drain cleaning services—rapid response for urgent drainage issues.
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function ProfessionalDrainCleaningPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Preventive Maintenance</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Regular drain cleaning and maintenance—prevent clogs and extend plumbing system lifespan.
+                  Call United Plumbing CCTX at (833) 609-0936. Regular drain cleaning and maintenance—prevent clogs and extend plumbing system lifespan.
                 </p>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function ProfessionalDrainCleaningPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Commercial Drain Cleaning</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Large-scale commercial drain cleaning—keep your business running smoothly with clean drains.
+                  Call United Plumbing CCTX at (833) 609-0936. Large-scale commercial drain cleaning—keep your business running smoothly with clean drains.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function ProfessionalDrainCleaningPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing for Drain Cleaning?
+            Why Choose United Plumbing CCTX for Drain Cleaning?
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
             50+ years of trusted service with licensed professionals and guaranteed workmanship

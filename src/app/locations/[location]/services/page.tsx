@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   
   if (!location) {
     return {
-      title: 'Plumbing Services | GD Professional Plumbing',
+      title: 'Plumbing Services | United Plumbing CCTX',
       description: 'Professional plumbing services across the USA. Licensed, experienced, and affordable for repairs, installs, or maintenance!'
     };
   }
@@ -86,7 +86,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       description: `Need plumbing help in ${location.name}? Expert plumbers for drain cleaning, leak detection, water heater repair & 24/7 emergency service. Call now!`,
       type: 'website',
       locale: 'en_US',
-      siteName: 'GD Professional Plumbing'
+      siteName: 'United Plumbing CCTX'
     },
     twitter: {
       card: 'summary_large_image',
@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       description: `Need plumbing help in ${location.name}? Expert plumbers for drain cleaning, leak detection, water heater repair & 24/7 emergency service. Call now!`
     },
     alternates: {
-      canonical: `https://${location.id}.gdprofessionalplumbing.com/services`
+      canonical: `https://${location.id}.unitedplumbingcctx.com/services`
     }
   };
 }
@@ -120,7 +120,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
             alt="Professional plumber working"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-700/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60"></div>
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-6xl mx-auto">
@@ -203,7 +203,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Heater Repair and Installation in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Affordable water heater repair and professional installation for homes and commercial buildings in {location.name}—fast service, licensed plumbers, and energy-efficient systems.
+                    Call United Plumbing CCTX at {location.phone}. Affordable water heater repair and professional installation for homes and commercial buildings in {location.name}—fast service, licensed plumbers, and energy-efficient systems.
                   </p>
                 </div>
               </div>
@@ -220,7 +220,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Tankless Water Heater Installation in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Expert installation of energy-efficient tankless water heaters for homes and businesses in {location.name}—endless hot water, lower utility bills, and space-saving design.
+                    Call United Plumbing CCTX at {location.phone}. Expert installation of energy-efficient tankless water heaters for homes and businesses in {location.name}—endless hot water, lower utility bills, and space-saving design.
                   </p>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Recirculation Pump Repair & Installation in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Professional repair and installation of hot water recirculation pumps for homes and businesses in {location.name}—get instant hot water, save water, and boost plumbing efficiency.
+                    Call United Plumbing CCTX at {location.phone}. Professional repair and installation of hot water recirculation pumps for homes and businesses in {location.name}—get instant hot water, save water, and boost plumbing efficiency.
                   </p>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Faucet and Sink Repair & Replacement in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Expert installation and repair of kitchen and bathroom faucets and sinks in {location.name}—leak-free performance, upgraded fixtures, and improved space functionality.
+                    Call United Plumbing CCTX at {location.phone}. Expert installation and repair of kitchen and bathroom faucets and sinks in {location.name}—leak-free performance, upgraded fixtures, and improved space functionality.
                   </p>
                 </div>
               </div>
@@ -271,7 +271,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Conservation Plumbing Systems in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Eco-friendly water-saving plumbing solutions for homes and businesses in {location.name}—reduce water waste, cut utility bills, and support sustainable living.
+                    Call United Plumbing CCTX at {location.phone}. Eco-friendly water-saving plumbing solutions for homes and businesses in {location.name}—reduce water waste, cut utility bills, and support sustainable living.
                   </p>
                 </div>
               </div>
@@ -288,7 +288,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Custom Bathroom Renovation in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. From outdated to outstanding—our expert team designs and renovates bathrooms in {location.name} with modern fixtures, efficient layouts, and timeless appeal for residential properties.
+                    Call United Plumbing CCTX at {location.phone}. From outdated to outstanding—our expert team designs and renovates bathrooms in {location.name} with modern fixtures, efficient layouts, and timeless appeal for residential properties.
                   </p>
                 </div>
               </div>
@@ -305,7 +305,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water System Installation & Repair in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. We install, repair, and maintain residential and commercial water systems in {location.name}—delivering clean, safe, and uninterrupted water flow for your property.
+                    Call United Plumbing CCTX at {location.phone}. We install, repair, and maintain residential and commercial water systems in {location.name}—delivering clean, safe, and uninterrupted water flow for your property.
                   </p>
                 </div>
               </div>
@@ -322,7 +322,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Slab Leak Detection & Repair in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Fast and accurate slab leak detection with expert repairs in {location.name}—protect your foundation, prevent costly water damage, and preserve your property's structural integrity.
+                    Call United Plumbing CCTX at {location.phone}. Fast and accurate slab leak detection with expert repairs in {location.name}—protect your foundation, prevent costly water damage, and preserve your property's structural integrity.
                   </p>
                 </div>
               </div>
@@ -339,7 +339,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Sump Pump Installation & Repair in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Keep your basement dry and protected with professional sump pump repair, installation, and maintenance in {location.name}—flood prevention solutions built for long-term reliability.
+                    Call United Plumbing CCTX at {location.phone}. Keep your basement dry and protected with professional sump pump repair, installation, and maintenance in {location.name}—flood prevention solutions built for long-term reliability.
                   </p>
                 </div>
               </div>
@@ -356,7 +356,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Professional Drain Cleaning in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Fast and effective drain cleaning for clogged sinks, tubs, and sewer lines in {location.name}—restore smooth drainage, eliminate blockages, and prevent future plumbing issues.
+                    Call United Plumbing CCTX at {location.phone}. Fast and effective drain cleaning for clogged sinks, tubs, and sewer lines in {location.name}—restore smooth drainage, eliminate blockages, and prevent future plumbing issues.
                   </p>
                 </div>
               </div>
@@ -373,7 +373,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Expert Drain Repair in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. We fix damaged or leaking drains with precision in {location.name}—prevent backups, water damage, and ensure a smooth-flowing, reliable plumbing system in your home or business.
+                    Call United Plumbing CCTX at {location.phone}. We fix damaged or leaking drains with precision in {location.name}—prevent backups, water damage, and ensure a smooth-flowing, reliable plumbing system in your home or business.
                   </p>
                 </div>
               </div>
@@ -390,7 +390,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Sewer Line Inspection & Replacement in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Thorough sewer camera inspections, repairs, and full replacements in {location.name}—ensure proper waste flow, avoid costly backups, and keep your sewer system running smoothly.
+                    Call United Plumbing CCTX at {location.phone}. Thorough sewer camera inspections, repairs, and full replacements in {location.name}—ensure proper waste flow, avoid costly backups, and keep your sewer system running smoothly.
                   </p>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Gas Line Installation & Repair in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Safe and code-compliant gas line installations, repairs, and replacements in {location.name}—power your appliances with confidence and protect your property from gas hazards.
+                    Call United Plumbing CCTX at {location.phone}. Safe and code-compliant gas line installations, repairs, and replacements in {location.name}—power your appliances with confidence and protect your property from gas hazards.
                   </p>
                 </div>
               </div>
@@ -424,7 +424,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Leak Detection & Repair in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. We use advanced leak detection tools to quickly locate and repair hidden water leaks in {location.name}—minimize damage, lower water bills, and keep your plumbing system efficient.
+                    Call United Plumbing CCTX at {location.phone}. We use advanced leak detection tools to quickly locate and repair hidden water leaks in {location.name}—minimize damage, lower water bills, and keep your plumbing system efficient.
                   </p>
                 </div>
               </div>
@@ -441,7 +441,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Repair & Installation in {location.name}, {location.state}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at {location.phone}. Fast and reliable toilet plumbing services for clogs, leaks, and replacements in {location.name}—restore full function, improve efficiency, and prevent costly water waste.
+                    Call United Plumbing CCTX at {location.phone}. Fast and reliable toilet plumbing services for clogs, leaks, and replacements in {location.name}—restore full function, improve efficiency, and prevent costly water waste.
                   </p>
                 </div>
               </div>
@@ -477,7 +477,7 @@ export default async function ServicesPage({ params }: LocationPageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose GD Professional Plumbing in {location.name}?
+              Why Choose United Plumbing CCTX in {location.name}?
             </h2>
             <p className="text-xl text-gray-600">
               50+ years of trusted service with licensed professionals and guaranteed workmanship

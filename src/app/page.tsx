@@ -4,11 +4,14 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import FloatingCTA from "@/components/FloatingCTA";
 import Footer from "@/components/Footer";
+import { getPlaceholderImage } from '@/data/imagePlaceholders';
+import type { PlaceholderName, ImagePlaceholder } from '@/data/imagePlaceholders';
 
 export default function Home() {
   // Updated homepage with new service card design
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [resolvedImages, setResolvedImages] = useState<Record<PlaceholderName, { url: string; alt: string }>>({});
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -23,6 +26,69 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadImages = async () => {
+      try {
+        const response = await fetch('/api/imagekit-placeholders');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch placeholder images: ${response.status}`);
+        }
+        const data = await response.json();
+        if (isMounted && data?.placeholders) {
+          setResolvedImages(data.placeholders as Record<PlaceholderName, { url: string; alt: string }>);
+        }
+      } catch (error) {
+        console.error('Failed to load ImageKit placeholders', error);
+      }
+    };
+
+    loadImages();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const heroPlaceholder = getPlaceholderImage('heroBackground');
+  const aboutSidePlaceholder = getPlaceholderImage('aboutSideImage');
+  const servicePlaceholders = {
+    waterHeater: getPlaceholderImage('serviceWaterHeater'),
+    tankless: getPlaceholderImage('serviceTanklessWaterHeater'),
+    recirculation: getPlaceholderImage('serviceWaterRecirculation'),
+    faucetSink: getPlaceholderImage('serviceFaucetSink'),
+    waterConservation: getPlaceholderImage('serviceWaterConservation'),
+    bathroomRenovation: getPlaceholderImage('serviceBathroomRenovation'),
+    waterSystem: getPlaceholderImage('serviceWaterSystem'),
+    slabLeak: getPlaceholderImage('serviceSlabLeak'),
+    sumpPump: getPlaceholderImage('serviceSumpPump'),
+    drainCleaning: getPlaceholderImage('serviceDrainCleaning'),
+    sewerLine: getPlaceholderImage('serviceSewerLine'),
+    gasLine: getPlaceholderImage('serviceGasLine'),
+    leakDetection: getPlaceholderImage('serviceLeakDetection'),
+    toiletRepair: getPlaceholderImage('serviceToiletRepair'),
+  } as const;
+  const splitSectionPlaceholder = getPlaceholderImage('splitSectionProfessional');
+
+  const resolvePlaceholder = (placeholder: ImagePlaceholder) => {
+    const resolved = resolvedImages[placeholder.key];
+    return {
+      url: resolved?.url ?? placeholder.defaultUrl,
+      alt: resolved?.alt ?? placeholder.alt,
+    };
+  };
+
+  const heroImage = resolvePlaceholder(heroPlaceholder);
+  const aboutSideImage = resolvePlaceholder(aboutSidePlaceholder);
+  const splitSectionImage = resolvePlaceholder(splitSectionPlaceholder);
+  const resolvedServiceImages = Object.fromEntries(
+    Object.entries(servicePlaceholders).map(([key, placeholder]) => [
+      key,
+      resolvePlaceholder(placeholder),
+    ]),
+  ) as Record<keyof typeof servicePlaceholders, { url: string; alt: string }>;
+
   return (
     <div className="bg-white min-h-screen flex flex-col font-sans">
       <Header />
@@ -31,12 +97,12 @@ export default function Home() {
       <section className="relative min-h-[70vh] md:h-[60vh] overflow-hidden">
         {/* Background Image */}
         <img 
-          src="/hero-bg.jpg" 
-          alt="Plumbing background"
+          src={heroImage.url} 
+          alt={heroImage.alt}
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-700/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60"></div>
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center pb-20 md:pb-0">
           <div className="text-center text-white px-6 max-w-4xl mx-auto">
@@ -59,21 +125,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Trusted Residential & Commercial Plumbing Services in the USA</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Trusted Residential & Commercial Plumbing Services in the US</h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  At GD Professional Plumbing, we&apos;ve been helping Americans keep their pipes in check with real, no-nonsense plumbing services. Whether it&apos;s a busted water heater, a stubborn drain, or a full remodel, our team shows up ready to fix it—without the upsell or drama.
+                  At United Plumbing CCTX, we&apos;ve been helping Americans keep their pipes in check with real, no-nonsense plumbing services. Whether it&apos;s a busted water heater, a stubborn drain, or a full remodel, our team shows up ready to fix it—without the upsell or drama.
                 </p>
                 <p>
-                  We&apos;re a small crew of licensed and insured professionals who take pride in our work. If we say we&apos;ll be there at 9, we show up at 8:55. No shortcuts. No guessing games. Just solid plumbing done right the first time.
+                  We&apos;re a dedicated crew of licensed and insured professionals who take pride in our work. If we say we&apos;ll be there at 9, we show up at 8:55. No shortcuts. No guessing games. Just solid plumbing done right the first time.
                 </p>
                 <p>
-                  Need something fixed or upgraded? Give GD Professional Plumbing a ring. We&apos;ll take care of it like pros—because that&apos;s exactly what we are.
+                  Need something fixed or upgraded? Give United Plumbing CCTX a call. We&apos;ll take care of it like pros—because that&apos;s exactly what we are.
                 </p>
               </div>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="bg-[#1c7bc8] text-white rounded-full p-2 mt-1">
+                  <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M5 13l4 4L19 7"/>
                     </svg>
@@ -84,7 +150,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="bg-[#1c7bc8] text-white rounded-full p-2 mt-1">
+                  <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M5 13l4 4L19 7"/>
                     </svg>
@@ -95,7 +161,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="bg-[#1c7bc8] text-white rounded-full p-2 mt-1">
+                  <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M5 13l4 4L19 7"/>
                     </svg>
@@ -106,7 +172,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="bg-[#1c7bc8] text-white rounded-full p-2 mt-1">
+                  <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M5 13l4 4L19 7"/>
                     </svg>
@@ -120,15 +186,15 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-start justify-start">
               <img 
-                src="https://ik.imagekit.io/nang9yead/Smiling%20Plumber%20Holding%20Wrench%20in%20Kitchen.png?updatedAt=1756066963942"
-                alt="Professional plumbing services"
+                src={aboutSideImage.url}
+                alt={aboutSideImage.alt}
                 className="rounded-2xl shadow-lg w-full h-64 sm:h-80 lg:h-96 object-cover mb-6"
               />
               
 
               
               {/* Contact Card */}
-              <div className="bg-[#1c7bc8] text-white p-6 rounded-xl w-full">
+              <div className="bg-[#ea580c] text-white p-6 rounded-xl w-full">
                 <h4 className="font-bold mb-4 text-lg">Ready to Get Started?</h4>
                 <div className="space-y-3 mb-4">
                   <div className="flex items-center">
@@ -138,7 +204,7 @@ export default function Home() {
                     <span className="font-semibold">(833) 609-0936</span>
                   </div>
             </div>
-                <a href="tel:8336090936" className="inline-flex items-center bg-white text-[#1c7bc8] px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition text-sm">
+                <a href="tel:8336090936" className="inline-flex items-center bg-white text-[#ea580c] px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition text-sm">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
@@ -154,22 +220,22 @@ export default function Home() {
         <section className="pt-2 pb-12 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Types of Plumbing Services We Offer in the US</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">GD Professional Plumbing Helps You with All Your Plumbing Projects including:</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Types of Plumbing Services We Offer in US</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">United Plumbing CCTX Helps You with All Your Plumbing Projects including:</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Water Heater Repair and Installation */}
               <Link href="/services/plumber-water-heater-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Plumber%20Fixing%20Leaking%20Sink%20Pipe%20with%20Wrench.png?updatedAt=1756066955385"
-                    alt="Water Heater Repair and Installation"
+                    src={resolvedServiceImages.waterHeater.url}
+                    alt={resolvedServiceImages.waterHeater.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Water Heater Repair & Installation in the US</h3>
                     <p className="text-gray-600">
-                      Affordable water heater repair and professional installation for homes and commercial buildings in the US—fast service, licensed plumbers, and energy-efficient systems.
+                      Affordable water heater repair and professional installation for homes and commercial buildings in US—fast service, licensed plumbers, and energy-efficient systems.
                     </p>
                   </div>
                 </div>
@@ -179,8 +245,8 @@ export default function Home() {
               <Link href="/services/plumber-tankless-water-heater" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Worker%20Adjusting%20Water%20Filtration%20System%20Valves?updatedAt=1756066968225"
-                    alt="Tankless Water Heater Installation"
+                    src={resolvedServiceImages.tankless.url}
+                    alt={resolvedServiceImages.tankless.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -196,8 +262,8 @@ export default function Home() {
               <Link href="/services/plumber-water-recirculation-pump" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Maintenance%20Worker%20Adjusting%20Copper%20Plumbing%20Pipes.png?updatedAt=1756066948233"
-                    alt="Water Recirculation Pump"
+                    src={resolvedServiceImages.recirculation.url}
+                    alt={resolvedServiceImages.recirculation.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -213,8 +279,8 @@ export default function Home() {
               <Link href="/services/plumber-faucet-sink-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Smiling%20Plumber%20Repairing%20Bathroom%20Sink%20Pipe.png?updatedAt=1756066965094"
-                    alt="Faucets & Sinks"
+                    src={resolvedServiceImages.faucetSink.url}
+                    alt={resolvedServiceImages.faucetSink.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -230,8 +296,8 @@ export default function Home() {
               <Link href="/services/plumber-water-conservation" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Plumbers%20Installing%20Wall-Mounted%20Water%20Tap?updatedAt=1756066963229"
-                    alt="Water Conservation Plumbing Systems"
+                    src={resolvedServiceImages.waterConservation.url}
+                    alt={resolvedServiceImages.waterConservation.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -247,8 +313,8 @@ export default function Home() {
               <Link href="/services/plumber-bathroom-renovation" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/young%20female%20plumber%20fixing%20?updatedAt=1756066968835"
-                    alt="Custom Bathroom Renovation"
+                    src={resolvedServiceImages.bathroomRenovation.url}
+                    alt={resolvedServiceImages.bathroomRenovation.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -264,8 +330,8 @@ export default function Home() {
               <Link href="/services/plumber-water-system-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Industrial%20HVAC%20Technician%20Inspection.png?updatedAt=1756066941834"
-                    alt="Water System Installation & Repair"
+                    src={resolvedServiceImages.waterSystem.url}
+                    alt={resolvedServiceImages.waterSystem.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -281,12 +347,12 @@ export default function Home() {
               <Link href="/services/plumber-slab-leak-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Old%20Rusty%20Pipe%20Dripping%20Water.png?updatedAt=1756066951741"
-                    alt="Slab Leak Detection & Repair"
+                    src={resolvedServiceImages.slabLeak.url}
+                    alt={resolvedServiceImages.slabLeak.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-4 text-black">Slab Leak Detection & Repair in the US</h3>
+                    <h3 className="text-xl font-bold mb-4 text-black">Slab Leak Detection & Repair in the USA</h3>
                     <p className="text-gray-600">
                       Fast and accurate slab leak detection with expert repairs in the US—protect your foundation, prevent costly water damage, and preserve your property's structural integrity.
                     </p>
@@ -298,8 +364,8 @@ export default function Home() {
               <Link href="/services/plumber-sump-pump-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Electrician%20Working%20on%20Outdoor%20Wiring%20in%20Lawn.png?updatedAt=1756066952425"
-                    alt="Sump Pump Installation & Repair"
+                    src={resolvedServiceImages.sumpPump.url}
+                    alt={resolvedServiceImages.sumpPump.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -315,8 +381,8 @@ export default function Home() {
               <Link href="/services/plumber-drain-cleaning" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/plumber%20clearing%20blocked%20sink%20with%20water?updatedAt=1756066954284"
-                    alt="Professional Drain Cleaning"
+                    src={resolvedServiceImages.drainCleaning.url}
+                    alt={resolvedServiceImages.drainCleaning.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -334,8 +400,8 @@ export default function Home() {
               <Link href="/services/plumber-sewer-line-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Old%20Rusty%20Underground%20Pipeline.png?updatedAt=1756066953091"
-                    alt="Sewer Line Inspection & Replacement"
+                    src={resolvedServiceImages.sewerLine.url}
+                    alt={resolvedServiceImages.sewerLine.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -351,8 +417,8 @@ export default function Home() {
               <Link href="/services/plumber-gas-line-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Industrial%20Green%20and%20Orange%20Water%20Pipelines?updatedAt=1756066950649"
-                    alt="Gas Line Installation & Repair"
+                    src={resolvedServiceImages.gasLine.url}
+                    alt={resolvedServiceImages.gasLine.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -368,8 +434,8 @@ export default function Home() {
               <Link href="/services/plumber-leak-detection" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/PVC%20Pipe%20Installation%20in%20Soil.png?updatedAt=1756066962271"
-                    alt="Leak Detection & Repair"
+                    src={resolvedServiceImages.leakDetection.url}
+                    alt={resolvedServiceImages.leakDetection.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -385,8 +451,8 @@ export default function Home() {
               <Link href="/services/plumber-toilet-repair" className="block">
                 <div className="bg-white rounded-xl shadow-lg border hover:shadow-xl transition-shadow overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/nang9yead/Plumber%20Using%20Plunger%20on%20Toilet%20Bowl%20worker%20in%20orange%20uniform%20unclogging%20toilet?updatedAt=1756066962119"
-                    alt="Toilet Repair & Installation"
+                    src={resolvedServiceImages.toiletRepair.url}
+                    alt={resolvedServiceImages.toiletRepair.alt}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
@@ -401,11 +467,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why Choose GD Professional Plumbing? */}
+        {/* Why Choose United Plumbing CCTX? */}
         <section className="py-12 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose GD Professional Plumbing?</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose United Plumbing CCTX?</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">50+ years of trusted service with licensed professionals and guaranteed workmanship</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -480,7 +546,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section - Above FAQ */}
-        <section className="py-4 px-4 bg-gradient-to-r from-[#1c7bc8] to-[#0f5a9e] text-white">
+        <section className="py-4 px-4 bg-gradient-to-r from-[#ea580c] to-[#c2410c] text-white">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-3">
               {/* Left Side - Phone Number */}
@@ -493,7 +559,7 @@ export default function Home() {
               <div>
                 <a
                   href="tel:8336090936"
-                  className="inline-flex items-center bg-[#0d4a8a] hover:bg-[#0a3d75] text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg"
+                  className="inline-flex items-center bg-[#c2410c] hover:bg-[#9a3412] text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg"
                 >
                   Order Service now
                 </a>
@@ -507,7 +573,7 @@ export default function Home() {
         <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#1c7bc8] rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#ea580c] rounded-full mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
@@ -520,15 +586,15 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Step 1 */}
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-2xl transform rotate-2 group-hover:rotate-4 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-2xl transform rotate-2 group-hover:rotate-4 transition-transform duration-300"></div>
                 <div className="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="bg-[#1c7bc8] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                  <div className="bg-[#ea580c] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-semibold text-[#1c7bc8] mb-2">STEP 1</div>
+                    <div className="text-sm font-semibold text-[#ea580c] mb-2">STEP 1</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">Personalized Consultation</h3>
                     <p className="text-gray-600 leading-relaxed">
                       We begin with a detailed call to understand your issue and offer a clear, honest estimate.
@@ -539,15 +605,15 @@ export default function Home() {
 
               {/* Step 2 */}
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-2xl transform -rotate-1 group-hover:-rotate-3 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-2xl transform -rotate-1 group-hover:-rotate-3 transition-transform duration-300"></div>
                 <div className="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="bg-[#1c7bc8] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                  <div className="bg-[#ea580c] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-semibold text-[#1c7bc8] mb-2">STEP 2</div>
+                    <div className="text-sm font-semibold text-[#ea580c] mb-2">STEP 2</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">Accurate Diagnosis</h3>
                     <p className="text-gray-600 leading-relaxed">
                       Our expert team inspects thoroughly to find the real issue using modern tools.
@@ -558,16 +624,16 @@ export default function Home() {
 
               {/* Step 3 */}
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-2xl transform rotate-1 group-hover:rotate-3 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-2xl transform rotate-1 group-hover:rotate-3 transition-transform duration-300"></div>
                 <div className="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="bg-[#1c7bc8] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                  <div className="bg-[#ea580c] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-semibold text-[#1c7bc8] mb-2">STEP 3</div>
+                    <div className="text-sm font-semibold text-[#ea580c] mb-2">STEP 3</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">Quality Workmanship</h3>
                     <p className="text-gray-600 leading-relaxed">
                       We fix the problem with care, professionalism, and attention to detail.
@@ -578,15 +644,15 @@ export default function Home() {
 
               {/* Step 4 */}
               <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-2xl transform -rotate-2 group-hover:-rotate-4 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-2xl transform -rotate-2 group-hover:-rotate-4 transition-transform duration-300"></div>
                 <div className="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="bg-[#1c7bc8] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                  <div className="bg-[#ea580c] text-white rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-semibold text-[#1c7bc8] mb-2">STEP 4</div>
+                    <div className="text-sm font-semibold text-[#ea580c] mb-2">STEP 4</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">After-Service Care</h3>
                     <p className="text-gray-600 leading-relaxed">
                       We follow up to ensure everything runs perfectly and offer ongoing support.
@@ -599,19 +665,19 @@ export default function Home() {
             {/* Process Flow Line */}
             <div className="hidden lg:block mt-12">
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-8 h-8 bg-[#1c7bc8] rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-[#ea580c] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">1</span>
                 </div>
                 <div className="flex-1 h-1 bg-gradient-to-r from-[#1c7bc8] to-gray-300 rounded-full"></div>
-                <div className="w-8 h-8 bg-[#1c7bc8] rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-[#ea580c] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">2</span>
                 </div>
                 <div className="flex-1 h-1 bg-gradient-to-r from-gray-300 to-[#1c7bc8] rounded-full"></div>
-                <div className="w-8 h-8 bg-[#1c7bc8] rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-[#ea580c] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">3</span>
                 </div>
                 <div className="flex-1 h-1 bg-gradient-to-r from-[#1c7bc8] to-gray-300 rounded-full"></div>
-                <div className="w-8 h-8 bg-[#1c7bc8] rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-[#ea580c] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">4</span>
                 </div>
               </div>
@@ -626,16 +692,16 @@ export default function Home() {
           <div className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
               {/* Left Column - Text Content */}
-              <div className="bg-[#1c7bc8] text-white p-10 flex flex-col justify-center">
+              <div className="bg-[#ea580c] text-white p-10 flex flex-col justify-center">
                 <h2 className="text-3xl font-bold mb-6 leading-tight">
                   Need Professional Plumber for All Your Plumbing Needs
                 </h2>
                 <p className="text-base mb-8 leading-relaxed opacity-95">
-                  When it comes to reliable plumbing services in the USA, GD Professional Plumbing is the name you can trust. We're proud to serve our community with top-quality plumbing solutions that keep your home or business running smoothly. Whether you're looking for routine maintenance, emergency repairs, or a complete plumbing overhaul, our team is ready to provide the expert service you deserve.
+                  When it comes to reliable plumbing services across the US, United Plumbing CCTX is the name you can trust. We're proud to serve our community with top-quality plumbing solutions that keep your home or business running smoothly. Whether you're looking for routine maintenance, emergency repairs, or a complete plumbing overhaul, our team is ready to provide the expert service you deserve.
                 </p>
                 <a
                   href="tel:+18336090936"
-                  className="inline-flex items-center bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-white hover:text-[#1c7bc8] transition-all duration-300 self-start"
+                  className="inline-flex items-center bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-white hover:text-[#ea580c] transition-all duration-300 self-start"
                 >
                   <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -647,8 +713,8 @@ export default function Home() {
               {/* Right Column - Plumber Image */}
               <div className="relative h-full">
                 <img 
-                  src="https://ik.imagekit.io/nang9yead/Female%20Carpenter%20or%20Technician%20in%20Workshop.png?updatedAt=1756066944879" 
-                  alt="Professional Plumber at Work" 
+                  src={splitSectionImage.url} 
+                  alt={splitSectionImage.alt} 
                   className="w-full h-full object-cover shadow-lg"
                 />
               </div>
@@ -668,7 +734,7 @@ export default function Home() {
               {[
                 {
                   question: "What areas do you serve?",
-                  answer: "We provide comprehensive plumbing services throughout the USA, including residential and commercial properties. Our team is available for emergency calls and scheduled appointments nationwide."
+                  answer: "We provide comprehensive plumbing services throughout US, including residential and commercial properties. Our team is available for emergency calls and scheduled appointments across the state."
                 },
                 {
                   question: "Do you offer emergency plumbing services?",
@@ -696,7 +762,7 @@ export default function Home() {
                 },
                 {
                   question: "How long have you been in business?",
-                  answer: "GD Professional Plumbing has been serving customers since 1973, with over 50 years of experience in residential and commercial plumbing services."
+                  answer: "United Plumbing CCTX has been serving US customers with years of experience in residential and commercial plumbing services."
                 }
               ].map((faq, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
@@ -730,7 +796,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#1c7bc8] rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#ea580c] rounded-full mb-6">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
               </svg>
@@ -748,12 +814,12 @@ export default function Home() {
                   {[
                     {
                       name: "Sarah Johnson",
-                      text: "GD Professional Plumbing saved us during a major pipe burst. Their emergency response was incredible - they arrived within 30 minutes and fixed everything professionally.",
+                      text: "United Plumbing CCTX saved us during a major pipe burst. Their emergency response was incredible - they arrived within 30 minutes and fixed everything professionally.",
                       rating: 5
                     },
                     {
                       name: "Michael Chen",
-                      text: "We've been using GD Professional Plumbing for our office building maintenance for over 10 years. Their reliability and expertise are unmatched.",
+                      text: "We've been using United Plumbing CCTX for our office building maintenance for years. Their reliability and expertise are unmatched.",
                       rating: 5
                     },
                     {
@@ -763,7 +829,7 @@ export default function Home() {
                     },
                   ].map((t, index) => (
                     <div key={`slide1-${index}`} className="group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                       <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
                         <div className="flex items-center mb-6">
                           {[...Array(t.rating)].map((_, i) => (
@@ -772,14 +838,14 @@ export default function Home() {
                             </svg>
                           ))}
                         </div>
-                        <div className="text-[#1c7bc8] text-4xl mb-4">"</div>
+                        <div className="text-[#ea580c] text-4xl mb-4">"</div>
                         <p className="text-gray-700 mb-6 text-lg leading-relaxed italic">{t.text}</p>
                         <div className="flex items-center">
                           <div>
                             <div className="font-bold text-gray-900 text-lg">{t.name}</div>
                           </div>
                         </div>
-                        <div className="absolute top-4 right-4 text-[#1c7bc8] opacity-20">
+                        <div className="absolute top-4 right-4 text-[#ea580c] opacity-20">
                           <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                           </svg>
@@ -801,7 +867,7 @@ export default function Home() {
                     },
                     {
                       name: "Jennifer Wilson",
-                      text: "GD Professional Plumbing has been maintaining our restaurant's plumbing for 5 years. They're reliable, fast, and always professional.",
+                      text: "United Plumbing CCTX has been maintaining our restaurant's plumbing for years. They're reliable, fast, and always professional.",
                       rating: 5
                     },
                     {
@@ -811,7 +877,7 @@ export default function Home() {
                     },
                   ].map((t, index) => (
                     <div key={`slide2-${index}`} className="group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                       <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
                         <div className="flex items-center mb-6">
                           {[...Array(t.rating)].map((_, i) => (
@@ -820,14 +886,14 @@ export default function Home() {
                             </svg>
                           ))}
                         </div>
-                        <div className="text-[#1c7bc8] text-4xl mb-4">"</div>
+                        <div className="text-[#ea580c] text-4xl mb-4">"</div>
                         <p className="text-gray-700 mb-6 text-lg leading-relaxed italic">{t.text}</p>
                         <div className="flex items-center">
                           <div>
                             <div className="font-bold text-gray-900 text-lg">{t.name}</div>
                           </div>
                         </div>
-                        <div className="absolute top-4 right-4 text-[#1c7bc8] opacity-20">
+                        <div className="absolute top-4 right-4 text-[#ea580c] opacity-20">
                           <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                           </svg>
@@ -854,12 +920,12 @@ export default function Home() {
                     },
                     {
                       name: "Emily Davis",
-                      text: "GD Professional Plumbing has been our go-to for all properties. Consistent quality, fair pricing, and exceptional service.",
+                      text: "United Plumbing CCTX has been our go-to for all properties. Consistent quality, fair pricing, and exceptional service.",
                       rating: 5
                     },
                   ].map((t, index) => (
                     <div key={`slide3-${index}`} className="group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#ea580c] to-[#c2410c] rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                       <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
                         <div className="flex items-center mb-6">
                           {[...Array(t.rating)].map((_, i) => (
@@ -868,14 +934,14 @@ export default function Home() {
                             </svg>
                           ))}
                         </div>
-                        <div className="text-[#1c7bc8] text-4xl mb-4">"</div>
+                        <div className="text-[#ea580c] text-4xl mb-4">"</div>
                         <p className="text-gray-700 mb-6 text-lg leading-relaxed italic">{t.text}</p>
                         <div className="flex items-center">
                           <div>
                             <div className="font-bold text-gray-900 text-lg">{t.name}</div>
                           </div>
                         </div>
-                        <div className="absolute top-4 right-4 text-[#1c7bc8] opacity-20">
+                        <div className="absolute top-4 right-4 text-[#ea580c] opacity-20">
                           <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                           </svg>
@@ -894,7 +960,7 @@ export default function Home() {
                   key={slide}
                   onClick={() => setCurrentSlide(slide)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === slide ? 'bg-[#1c7bc8] scale-125' : 'bg-gray-300'
+                    currentSlide === slide ? 'bg-[#ea580c] scale-125' : 'bg-gray-300'
                   }`}
                 />
               ))}

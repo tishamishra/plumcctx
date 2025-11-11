@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: StateServicePageProps): Promi
   const serviceName = getServiceName(service);
 
   return {
-    title: `${serviceName} in ${stateFullName} | GD Professional Plumbing`,
-    description: `Professional ${serviceName.toLowerCase()} services in ${stateFullName}. Expert plumbers for ${serviceName.toLowerCase()} with 24/7 emergency service. Call (833) 609-0936!`,
+    title: `United Plumbing CCTX ${serviceName} in ${stateFullName} | Statewide Specialists`,
+    description: `Connect with United Plumbing CCTX for ${serviceName.toLowerCase()} anywhere in ${stateFullName}. Licensed teams deliver 24/7 service, repairs, and preventive maintenance statewide.`,
     keywords: [
       `${serviceName.toLowerCase()} ${stateFullName}`,
       `plumber ${stateFullName}`,
@@ -41,20 +41,20 @@ export async function generateMetadata({ params }: StateServicePageProps): Promi
       `plumbing installation ${stateFullName}`
     ],
     openGraph: {
-      title: `${serviceName} in ${stateFullName} | GD Professional Plumbing`,
-      description: `Professional ${serviceName.toLowerCase()} services in ${stateFullName}. Expert plumbers for ${serviceName.toLowerCase()} with 24/7 emergency service.`,
-      url: `https://www.gdprofessionalplumbing.com/states/${state.toLowerCase()}/${service}`,
-      siteName: 'GD Professional Plumbing',
+      title: `United Plumbing CCTX ${serviceName} in ${stateFullName} | Statewide Specialists`,
+      description: `Connect with United Plumbing CCTX for ${serviceName.toLowerCase()} anywhere in ${stateFullName}. Licensed teams deliver 24/7 service, repairs, and preventive maintenance statewide.`,
+      url: `https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}/${service}`,
+      siteName: 'United Plumbing CCTX',
       locale: 'en_US',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${serviceName} in ${stateFullName} | GD Professional Plumbing`,
-      description: `Professional ${serviceName.toLowerCase()} services in ${stateFullName}. Expert plumbers for ${serviceName.toLowerCase()} with 24/7 emergency service.`,
+      title: `United Plumbing CCTX ${serviceName} in ${stateFullName} | Statewide Specialists`,
+      description: `Connect with United Plumbing CCTX for ${serviceName.toLowerCase()} anywhere in ${stateFullName}. Licensed teams deliver 24/7 service, repairs, and preventive maintenance statewide.`,
     },
     alternates: {
-      canonical: `https://www.gdprofessionalplumbing.com/states/${state.toLowerCase()}/${service}`,
+      canonical: `https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}/${service}`,
     },
   };
 }
@@ -80,7 +80,7 @@ export default async function StateServicePage({ params }: StateServicePageProps
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {serviceName} in {stateFullName}
@@ -183,7 +183,7 @@ export default async function StateServicePage({ params }: StateServicePageProps
             {stateLocations.slice(0, 20).map((location) => (
               <Link
                 key={location.id}
-                href={`https://${location.id.toLowerCase()}.gdprofessionalplumbing.com/${service}`}
+                href={`https://${location.id.toLowerCase()}.unitedplumbingcctx.com/${service}`}
                 className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 text-center group"
               >
                 <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">

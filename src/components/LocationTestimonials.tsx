@@ -25,12 +25,12 @@ export default function LocationTestimonials({ }: LocationTestimonialsProps) {
     [
       {
         name: "Sarah Johnson",
-        text: "GD Professional Plumbing saved us during a major pipe burst. Their emergency response was incredible - they arrived within 30 minutes and fixed everything professionally. Couldn't be happier with their service!",
+        text: "United Plumbing CCTX saved us during a major pipe burst. Their emergency response was incredible - they arrived within 30 minutes and fixed everything professionally. Couldn't be happier with their service!",
         rating: 5
       },
       {
         name: "Michael Chen",
-        text: "We've been using GD Professional Plumbing for our office building maintenance for over 10 years. Their reliability and expertise are unmatched. They always show up on time and get the job done right.",
+        text: "We've been using United Plumbing CCTX for our office building maintenance for over 10 years. Their reliability and expertise are unmatched. They always show up on time and get the job done right.",
         rating: 5
       },
       {
@@ -48,7 +48,7 @@ export default function LocationTestimonials({ }: LocationTestimonialsProps) {
       },
       {
         name: "Jennifer Wilson",
-        text: "GD Professional Plumbing has been maintaining our restaurant's plumbing for 5 years. They're reliable, fast, and always professional. They understand that downtime costs money and work efficiently.",
+        text: "United Plumbing CCTX has been maintaining our restaurant's plumbing for 5 years. They're reliable, fast, and always professional. They understand that downtime costs money and work efficiently.",
         rating: 5
       },
       {
@@ -71,7 +71,7 @@ export default function LocationTestimonials({ }: LocationTestimonialsProps) {
       },
       {
         name: "Emily Davis",
-        text: "GD Professional Plumbing has been our go-to for all properties. Consistent quality, fair pricing, and exceptional service. They treat every job like it's their own home.",
+        text: "United Plumbing CCTX has been our go-to for all properties. Consistent quality, fair pricing, and exceptional service. They treat every job like it's their own home.",
         rating: 5
       },
     ]

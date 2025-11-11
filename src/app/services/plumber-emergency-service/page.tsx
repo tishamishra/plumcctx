@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Emergency Plumbing Services 24/7 in the US | GD Professional Plumbing',
-  description: '24/7 emergency plumbing services across the USA. Fast response times, expert repairs, and peace of mind when you need it most. Available round the clock for urgent plumbing emergencies. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: '24/7 Emergency Plumbing Response Nationwide | United Plumbing CCTX',
+  description: 'Call United Plumbing CCTX any time for burst pipes, leaks, gas issues, and sewer backups—our licensed plumbers respond within minutes nationwide.',
   keywords: [
     'emergency plumbing services',
     '24/7 plumbing',
@@ -28,20 +28,20 @@ export const metadata: Metadata = {
     'licensed plumber'
   ],
   openGraph: {
-    title: 'Emergency Plumbing Services 24/7 in the US | GD Professional Plumbing',
-    description: '24/7 emergency plumbing services across the USA. Fast response times, expert repairs, and peace of mind when you need it most. Available round the clock for urgent plumbing emergencies.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-emergency-service',
-    siteName: 'GD Professional Plumbing',
+    title: '24/7 Emergency Plumbing Response Nationwide | United Plumbing CCTX',
+    description: 'Call United Plumbing CCTX any time for burst pipes, leaks, gas issues, and sewer backups—our licensed plumbers respond within minutes nationwide.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-emergency-service',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emergency Plumbing Services 24/7 in the US | GD Professional Plumbing',
-    description: '24/7 emergency plumbing services across the USA. Fast response times, expert repairs, and peace of mind when you need it most. Available round the clock for urgent plumbing emergencies.',
+    title: '24/7 Emergency Plumbing Response Nationwide | United Plumbing CCTX',
+    description: 'Call United Plumbing CCTX any time for burst pipes, leaks, gas issues, and sewer backups—our licensed plumbers respond within minutes nationwide.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-emergency-service',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-emergency-service',
   },
 };
 

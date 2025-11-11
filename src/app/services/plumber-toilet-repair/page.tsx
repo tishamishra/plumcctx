@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Expert Toilet Repair & Installation Services in the US | GD Professional Plumbing',
-  description: 'Fast and reliable toilet repair and installation services across the USA. Professional toilet services for clogs, leaks, and replacements. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Professional Toilet Repair & Replacement Services | United Plumbing CCTX',
+  description: 'United Plumbing CCTX fixes running toilets, clogs, leaks, and installs high-efficiency models for residential and commercial restrooms across the United States.',
   keywords: [
     'toilet repair',
     'toilet installation',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'toilet installation cost'
   ],
   openGraph: {
-    title: 'Expert Toilet Repair & Installation Services in the US | GD Professional Plumbing',
-    description: 'Fast and reliable toilet repair and installation services across the USA. Professional toilet services for clogs, leaks, and replacements. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-toilet-repair',
-    siteName: 'GD Professional Plumbing',
+    title: 'Professional Toilet Repair & Replacement Services | United Plumbing CCTX',
+    description: 'United Plumbing CCTX fixes running toilets, clogs, leaks, and installs high-efficiency models for residential and commercial restrooms across the United States.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-toilet-repair',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Toilet Repair & Installation Services in the US | GD Professional Plumbing',
-    description: 'Fast and reliable toilet repair and installation services across the USA. Professional toilet services for clogs, leaks, and replacements. Licensed, insured, and trusted since 1973.',
+    title: 'Professional Toilet Repair & Replacement Services | United Plumbing CCTX',
+    description: 'United Plumbing CCTX fixes running toilets, clogs, leaks, and installs high-efficiency models for residential and commercial restrooms across the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-toilet-repair',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-toilet-repair',
   },
 };
 
@@ -53,7 +53,7 @@ export default function ToiletRepairInstallationPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Plumber%20Using%20Plunger%20on%20Toilet%20Bowl%20worker%20in%20orange%20uniform%20unclogging%20toilet?updatedAt=1756066962119" 
             alt="Toilet repair and installation services"
@@ -107,7 +107,7 @@ export default function ToiletRepairInstallationPage() {
                 Are you searching for expert toilet services in the US?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert in the USA. We provide comprehensive toilet solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert in the USA. We provide comprehensive toilet solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -166,7 +166,7 @@ export default function ToiletRepairInstallationPage() {
             Toilet Services We Offer
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-            GD Professional Plumbing Helps You with All Your Toilet Projects including:
+            United Plumbing CCTX Helps You with All Your Toilet Projects including:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,7 +180,7 @@ export default function ToiletRepairInstallationPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Repair</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Fast and reliable repair services for all toilet issues—fix leaks, clogs, and malfunctions quickly.
+                  Call United Plumbing CCTX at (833) 609-0936. Fast and reliable repair services for all toilet issues—fix leaks, clogs, and malfunctions quickly.
                 </p>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function ToiletRepairInstallationPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Installation</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Professional installation of new toilets with proper sizing and modern fixtures.
+                  Call United Plumbing CCTX at (833) 609-0936. Professional installation of new toilets with proper sizing and modern fixtures.
                 </p>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function ToiletRepairInstallationPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Replacement</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Complete toilet replacement services—upgrade to newer, more efficient models.
+                  Call United Plumbing CCTX at (833) 609-0936. Complete toilet replacement services—upgrade to newer, more efficient models.
                 </p>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function ToiletRepairInstallationPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Unclogging</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Emergency unclogging services for blocked toilets—restore function quickly.
+                  Call United Plumbing CCTX at (833) 609-0936. Emergency unclogging services for blocked toilets—restore function quickly.
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function ToiletRepairInstallationPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Maintenance</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Preventive maintenance services—keep your toilets running efficiently and prevent issues.
+                  Call United Plumbing CCTX at (833) 609-0936. Preventive maintenance services—keep your toilets running efficiently and prevent issues.
                 </p>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function ToiletRepairInstallationPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Emergency Toilet Service</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. 24/7 emergency toilet services—rapid response for urgent toilet issues.
+                  Call United Plumbing CCTX at (833) 609-0936. 24/7 emergency toilet services—rapid response for urgent toilet issues.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function ToiletRepairInstallationPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing for Toilet Services?
+            Why Choose United Plumbing CCTX for Toilet Services?
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
             50+ years of trusted service with licensed professionals and guaranteed workmanship

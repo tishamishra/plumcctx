@@ -3,7 +3,16 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Force the correct domain for sitemap generation
   env: {
-    NEXT_PUBLIC_SITE_URL: 'https://www.gdprofessionalplumbing.com',
+    NEXT_PUBLIC_SITE_URL: 'https://www.unitedplumbingcctx.com',
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        pathname: '/**',
+      },
+    ],
   },
   // Ensure sitemap uses correct domain
   async rewrites() {
@@ -11,7 +20,7 @@ const nextConfig: NextConfig = {
   },
   // Override any environment variables that might be causing affinsight.com
   publicRuntimeConfig: {
-    siteUrl: 'https://www.gdprofessionalplumbing.com',
+    siteUrl: 'https://www.unitedplumbingcctx.com',
   },
   // Security headers
   async headers() {

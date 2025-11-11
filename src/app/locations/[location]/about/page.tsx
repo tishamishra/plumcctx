@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   
   if (!location) {
     return {
-      title: 'About Us | GD Professional Plumbing',
+      title: 'About Us | United Plumbing CCTX',
       description: 'Learn about our expert plumbing team. We provide reliable, affordable plumbing services, from repairs to installations, with 24/7 emergency support.'
     };
   }
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       description: `Learn about our expert plumbing team in ${location.name}. We provide reliable, affordable plumbing services, from repairs to installations, with 24/7 emergency support.`,
       type: 'website',
       locale: 'en_US',
-      siteName: 'GD Professional Plumbing'
+      siteName: 'United Plumbing CCTX'
     },
     twitter: {
       card: 'summary_large_image',
@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       description: `Learn about our expert plumbing team in ${location.name}. We provide reliable, affordable plumbing services, from repairs to installations, with 24/7 emergency support.`
     },
     alternates: {
-      canonical: `https://${location.id}.gdprofessionalplumbing.com/about`
+      canonical: `https://${location.id}.unitedplumbingcctx.com/about`
     }
   };
 }
@@ -158,7 +158,7 @@ export default async function AboutPage({ params }: LocationPageProps) {
             alt="Professional plumber working"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-700/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60"></div>
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-6xl mx-auto">
@@ -242,13 +242,13 @@ export default async function AboutPage({ params }: LocationPageProps) {
                   <h3 className="text-3xl font-bold text-gray-900 mb-6">A Legacy of Excellence in {location.name}, {location.state} Since 1973</h3>
                   <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                     <p>
-                      Founded in 1973 by George Davidson, GD Professional Plumbing began as a small family business with a simple mission: to provide honest, reliable plumbing services in {location.name} and surrounding areas. What started as a one-man operation has grown into one of the most trusted names in professional plumbing services throughout {location.state}.
+                      Founded in 1973 by George Davidson, United Plumbing CCTX began as a small family business with a simple mission: to provide honest, reliable plumbing services in {location.name} and surrounding areas. What started as a one-man operation has grown into one of the most trusted names in professional plumbing services throughout {location.state}.
                     </p>
                     <p>
                       Over the past five decades, we've witnessed the evolution of plumbing technology, from basic pipe systems to sophisticated smart home solutions. Through it all, we've maintained our commitment to quality, integrity, and customer satisfaction while expanding our reach to serve communities throughout {location.name} and the surrounding region.
                     </p>
                     <p>
-                      Today, GD Professional Plumbing serves thousands of residential and commercial customers in {location.name} with a team of over 50 licensed professionals, state-of-the-art equipment, and unwavering dedication to excellence in every project we undertake.
+                      Today, United Plumbing CCTX serves thousands of residential and commercial customers in {location.name} with a team of over 50 licensed professionals, state-of-the-art equipment, and unwavering dedication to excellence in every project we undertake.
                     </p>
                   </div>
                 </div>
@@ -363,7 +363,7 @@ export default async function AboutPage({ params }: LocationPageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ready to Experience the GD Professional Plumbing Difference?
+              Ready to Experience the United Plumbing CCTX Difference?
             </h2>
             <p className="text-xl text-gray-600">
               Join thousands of satisfied customers in {location.name} who trust us with their plumbing needs

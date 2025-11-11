@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import ContactPageContent from '@/components/ContactPageContent';
 
 export const metadata: Metadata = {
-  title: 'Contact Us Today | GD Professional Plumbing',
-  description: 'Contact GD Professional Plumbing for 24/7 emergency plumbing services across the USA. Call (833) 609-0936 for immediate assistance with water heater repair, drain cleaning, leak detection, and more.',
+  title: 'Contact United Plumbing CCTX | Nationwide 24/7 Plumbing Dispatch',
+  description: 'Call (833) 609-0936 or message United Plumbing CCTX to schedule emergency or planned plumbing repairs, installations, and maintenance anywhere in the United States.',
   keywords: [
     'contact plumber',
     'emergency plumber contact',
@@ -27,20 +27,20 @@ export const metadata: Metadata = {
     'commercial plumbing contact'
   ],
   openGraph: {
-    title: 'Contact Us Today | GD Professional Plumbing',
-    description: 'Contact GD Professional Plumbing for 24/7 emergency plumbing services across the USA. Call (833) 609-0936 for immediate assistance with water heater repair, drain cleaning, leak detection, and more.',
-    url: 'https://gdprofessionalplumbing.com/contact',
-    siteName: 'GD Professional Plumbing',
+    title: 'Contact United Plumbing CCTX | Nationwide 24/7 Plumbing Dispatch',
+    description: 'Call (833) 609-0936 or message United Plumbing CCTX to schedule emergency or planned plumbing repairs, installations, and maintenance anywhere in the United States.',
+    url: 'https://unitedplumbingcctx.com/contact',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us Today | GD Professional Plumbing',
-    description: 'Contact GD Professional Plumbing for 24/7 emergency plumbing services across the USA. Call (833) 609-0936 for immediate assistance with water heater repair, drain cleaning, leak detection, and more.',
+    title: 'Contact United Plumbing CCTX | Nationwide 24/7 Plumbing Dispatch',
+    description: 'Call (833) 609-0936 or message United Plumbing CCTX to schedule emergency or planned plumbing repairs, installations, and maintenance anywhere in the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/contact',
+    canonical: 'https://unitedplumbingcctx.com/contact',
   },
 };
 

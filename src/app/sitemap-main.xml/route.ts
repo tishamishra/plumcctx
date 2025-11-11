@@ -36,37 +36,37 @@ export async function GET() {
   // Main domain pages
   const mainPages = [
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/</loc>
+    <loc>https://www.unitedplumbingcctx.com/</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>`,
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/services</loc>
+    <loc>https://www.unitedplumbingcctx.com/services</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>`,
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/about</loc>
+    <loc>https://www.unitedplumbingcctx.com/about</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`,
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/contact</loc>
+    <loc>https://www.unitedplumbingcctx.com/contact</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`,
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/locations</loc>
+    <loc>https://www.unitedplumbingcctx.com/locations</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>`,
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/states</loc>
+    <loc>https://www.unitedplumbingcctx.com/states</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -76,7 +76,7 @@ export async function GET() {
   // Main domain service pages
   const mainServicePages = serviceSlugs.map(service => 
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/services/${service}</loc>
+    <loc>https://www.unitedplumbingcctx.com/services/${service}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -90,7 +90,7 @@ export async function GET() {
   // State pages
   const statePages = uniqueStates.map(state => 
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/states/${state.toLowerCase()}</loc>
+    <loc>https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -101,7 +101,7 @@ export async function GET() {
   const stateServicesPages = uniqueStates.flatMap(state =>
     serviceSlugs.map(service => 
       `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/states/${state.toLowerCase()}/${service}</loc>
+    <loc>https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}/${service}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -112,7 +112,7 @@ export async function GET() {
   // State services index pages
   const stateServicesIndexPages = uniqueStates.map(state => 
     `  <url>
-    <loc>https://www.gdprofessionalplumbing.com/states/${state.toLowerCase()}/services</loc>
+    <loc>https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}/services</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

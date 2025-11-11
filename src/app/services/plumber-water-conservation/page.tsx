@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Water Conservation Plumbing Systems & Solutions in the US | GD Professional Plumbing',
-  description: 'Professional water conservation plumbing solutions across the USA. Eco-friendly water-saving systems for homes and businesses. Reduce water waste, cut utility bills, and support sustainable living. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Water Conservation Plumbing Upgrades | United Plumbing CCTX',
+  description: 'Lower utility bills with United Plumbing CCTX. We retrofit low-flow fixtures, smart leak detectors, and greywater solutions across the United States.',
   keywords: [
     'water conservation plumbing',
     'eco-friendly plumbing',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'licensed plumber'
   ],
   openGraph: {
-    title: 'Water Conservation Plumbing Systems & Solutions in the US | GD Professional Plumbing',
-    description: 'Professional water conservation plumbing solutions across the USA. Eco-friendly water-saving systems for homes and businesses. Reduce water waste, cut utility bills, and support sustainable living.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-water-conservation',
-    siteName: 'GD Professional Plumbing',
+    title: 'Water Conservation Plumbing Upgrades | United Plumbing CCTX',
+    description: 'Lower utility bills with United Plumbing CCTX. We retrofit low-flow fixtures, smart leak detectors, and greywater solutions across the United States.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-water-conservation',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Water Conservation Plumbing Systems & Solutions in the US | GD Professional Plumbing',
-    description: 'Professional water conservation plumbing solutions across the USA. Eco-friendly water-saving systems for homes and businesses. Reduce water waste, cut utility bills, and support sustainable living.',
+    title: 'Water Conservation Plumbing Upgrades | United Plumbing CCTX',
+    description: 'Lower utility bills with United Plumbing CCTX. We retrofit low-flow fixtures, smart leak detectors, and greywater solutions across the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-water-conservation',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-water-conservation',
   },
 };
 
@@ -53,7 +53,7 @@ export default function WaterConservationPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Plumbers%20Installing%20Wall-Mounted%20Water%20Tap?updatedAt=1756066963229" 
             alt="Water conservation plumbing systems"
@@ -107,7 +107,7 @@ export default function WaterConservationPage() {
                 Are you searching for expert water conservation plumbing services?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert. We provide comprehensive water conservation solutions for both residential and commercial properties, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert. We provide comprehensive water conservation solutions for both residential and commercial properties, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -216,7 +216,7 @@ export default function WaterConservationPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing?
+            Why Choose United Plumbing CCTX?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex items-start space-x-4">

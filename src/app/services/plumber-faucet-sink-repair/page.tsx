@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Expert Faucet & Sink Repair & Replacement Services in the US | GD Professional Plumbing',
-  description: 'Expert installation and repair of kitchen and bathroom faucets and sinks across the USA. Professional faucet and sink services with leak-free performance. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Kitchen & Bathroom Faucet Repair Pros | United Plumbing CCTX',
+  description: 'Stop drips and upgrade fixtures with United Plumbing CCTX. Our plumbers fix leaks, replace cartridges, and install designer faucets nationwide.',
   keywords: [
     'faucet repair',
     'sink repair',
@@ -41,20 +41,20 @@ export const metadata: Metadata = {
     'sink repair service'
   ],
   openGraph: {
-    title: 'Expert Faucet & Sink Repair & Replacement Services in the US | GD Professional Plumbing',
-    description: 'Expert installation and repair of kitchen and bathroom faucets and sinks across the USA. Professional faucet and sink services with leak-free performance. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-faucet-sink-repair',
-    siteName: 'GD Professional Plumbing',
+    title: 'Kitchen & Bathroom Faucet Repair Pros | United Plumbing CCTX',
+    description: 'Stop drips and upgrade fixtures with United Plumbing CCTX. Our plumbers fix leaks, replace cartridges, and install designer faucets nationwide.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-faucet-sink-repair',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Faucet & Sink Repair & Replacement Services in the US | GD Professional Plumbing',
-    description: 'Expert installation and repair of kitchen and bathroom faucets and sinks across the USA. Professional faucet and sink services with leak-free performance. Licensed, insured, and trusted since 1973.',
+    title: 'Kitchen & Bathroom Faucet Repair Pros | United Plumbing CCTX',
+    description: 'Stop drips and upgrade fixtures with United Plumbing CCTX. Our plumbers fix leaks, replace cartridges, and install designer faucets nationwide.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-faucet-sink-repair',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-faucet-sink-repair',
   },
 };
 
@@ -65,7 +65,7 @@ export default function FaucetsSinksRepairReplacementPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Smiling%20Plumber%20Repairing%20Bathroom%20Sink%20Pipe.png?updatedAt=1756066965094" 
             alt="Faucet and sink repair and replacement services"
@@ -119,7 +119,7 @@ export default function FaucetsSinksRepairReplacementPage() {
                 Are you searching for expert faucet and sink services in the US?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert in the USA. We provide comprehensive faucet and sink solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert in the USA. We provide comprehensive faucet and sink solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -178,7 +178,7 @@ export default function FaucetsSinksRepairReplacementPage() {
             Faucet & Sink Services We Offer
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-            GD Professional Plumbing Helps You with All Your Faucet & Sink Projects including:
+            United Plumbing CCTX Helps You with All Your Faucet & Sink Projects including:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -192,7 +192,7 @@ export default function FaucetsSinksRepairReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Faucet Repair</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Fast and reliable repair services for all faucet issues—fix leaks, drips, and malfunctions quickly.
+                  Call United Plumbing CCTX at (833) 609-0936. Fast and reliable repair services for all faucet issues—fix leaks, drips, and malfunctions quickly.
                 </p>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function FaucetsSinksRepairReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Faucet Installation</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Professional installation of new faucets with proper fitting and modern designs.
+                  Call United Plumbing CCTX at (833) 609-0936. Professional installation of new faucets with proper fitting and modern designs.
                 </p>
               </div>
             </div>
@@ -222,7 +222,7 @@ export default function FaucetsSinksRepairReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Sink Repair</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Expert repair services for kitchen and bathroom sinks—fix leaks and restore functionality.
+                  Call United Plumbing CCTX at (833) 609-0936. Expert repair services for kitchen and bathroom sinks—fix leaks and restore functionality.
                 </p>
               </div>
             </div>
@@ -237,7 +237,7 @@ export default function FaucetsSinksRepairReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Sink Replacement</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Complete sink replacement services—upgrade to newer, more efficient models.
+                  Call United Plumbing CCTX at (833) 609-0936. Complete sink replacement services—upgrade to newer, more efficient models.
                 </p>
               </div>
             </div>
@@ -252,7 +252,7 @@ export default function FaucetsSinksRepairReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Kitchen Faucet Services</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Specialized kitchen faucet installation and repair—modern fixtures for your kitchen.
+                  Call United Plumbing CCTX at (833) 609-0936. Specialized kitchen faucet installation and repair—modern fixtures for your kitchen.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function FaucetsSinksRepairReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Bathroom Faucet Services</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Professional bathroom faucet services—elegant fixtures for your bathroom.
+                  Call United Plumbing CCTX at (833) 609-0936. Professional bathroom faucet services—elegant fixtures for your bathroom.
                 </p>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function FaucetsSinksRepairReplacementPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing for Faucet & Sink Services?
+            Why Choose United Plumbing CCTX for Faucet & Sink Services?
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
             50+ years of trusted service with licensed professionals and guaranteed workmanship

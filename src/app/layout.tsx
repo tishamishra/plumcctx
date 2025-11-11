@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "24/7 Emergency Plumbing & Repairs Services | GD Professional Plumbing",
-  description: "Professional 24/7 emergency plumbing services across the USA. Water heater repair, drain cleaning, leak detection, and more. Licensed, insured, and trusted since 1973. Call (833) 609-0936 for immediate service.",
+  title: "United Plumbing CCTX | Nationwide Emergency & Routine Plumbing Experts",
+  description: "United Plumbing CCTX delivers 24/7 licensed plumbers across the United States for water heaters, drain cleaning, leak detection, sewer repairs, and full-service maintenance.",
   keywords: [
     "24/7 emergency plumbing",
     "emergency plumber",
@@ -39,25 +39,40 @@ export const metadata: Metadata = {
     "plumbing maintenance"
   ],
   icons: {
-    icon: "https://ik.imagekit.io/nang9yead/8f7118ab-ec26-4a6f-88c3-dc61ebb150c3.png?updatedAt=1757159395174",
-    shortcut: "https://ik.imagekit.io/nang9yead/8f7118ab-ec26-4a6f-88c3-dc61ebb150c3.png?updatedAt=1757159395174",
-    apple: "https://ik.imagekit.io/nang9yead/8f7118ab-ec26-4a6f-88c3-dc61ebb150c3.png?updatedAt=1757159395174",
+    icon: [
+      {
+        url: "https://ik.imagekit.io/nang9yead/2dd331f2-e7c3-4d7c-bcec-2770629fd002.png?updatedAt=1762876958283",
+        type: "image/png",
+      },
+    ],
+    shortcut: [
+      {
+        url: "https://ik.imagekit.io/nang9yead/2dd331f2-e7c3-4d7c-bcec-2770629fd002.png?updatedAt=1762876958283",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "https://ik.imagekit.io/nang9yead/2dd331f2-e7c3-4d7c-bcec-2770629fd002.png?updatedAt=1762876958283",
+        type: "image/png",
+      },
+    ],
   },
   openGraph: {
-    title: "24/7 Emergency Plumbing & Repairs Services | GD Professional Plumbing",
-    description: "Professional 24/7 emergency plumbing services across the USA. Water heater repair, drain cleaning, leak detection, and more. Licensed, insured, and trusted since 1973.",
-    url: "https://gdprofessionalplumbing.com",
-    siteName: "GD Professional Plumbing",
+    title: "United Plumbing CCTX | Nationwide Emergency & Routine Plumbing Experts",
+    description: "United Plumbing CCTX delivers 24/7 licensed plumbers across the United States for water heaters, drain cleaning, leak detection, sewer repairs, and full-service maintenance.",
+    url: "https://unitedplumbingcctx.com",
+    siteName: "United Plumbing CCTX",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "24/7 Emergency Plumbing & Repairs Services | GD Professional Plumbing",
-    description: "Professional 24/7 emergency plumbing services across the USA. Water heater repair, drain cleaning, leak detection, and more.",
+    title: "United Plumbing CCTX | Nationwide Emergency & Routine Plumbing Experts",
+    description: "United Plumbing CCTX delivers 24/7 licensed plumbers across the United States for water heaters, drain cleaning, leak detection, sewer repairs, and full-service maintenance.",
   },
   alternates: {
-    canonical: "https://gdprofessionalplumbing.com",
+    canonical: "https://unitedplumbingcctx.com",
   },
 };
 

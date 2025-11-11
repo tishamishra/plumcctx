@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: StatePageProps): Promise<Meta
   const stateFullName = getStateFullName(stateName);
 
   return {
-    title: `Best Licensed & Certified Plumbers in ${stateFullName} | GD Professional Plumbing`,
-    description: `Trusted plumbing experts in ${stateFullName}. Licensed, experienced, and affordable for repairs, installs, or maintenance! Call (833) 609-0936 for 24/7 service.`,
+    title: `United Plumbing CCTX in ${stateFullName} | Licensed Statewide Plumbing Experts`,
+    description: `Find United Plumbing CCTX plumbers across ${stateFullName} for 24/7 emergency response, water heater service, drain cleaning, and full-system repairs.`,
     keywords: [
       `plumber ${stateFullName}`,
       `plumbing services ${stateFullName}`,
@@ -48,20 +48,20 @@ export async function generateMetadata({ params }: StatePageProps): Promise<Meta
       `plumbing installation ${stateFullName}`
     ],
     openGraph: {
-      title: `Best Licensed & Certified Plumbers in ${stateFullName} | GD Professional Plumbing`,
-      description: `Trusted plumbing experts in ${stateFullName}. Licensed, experienced, and affordable for repairs, installs, or maintenance!`,
-      url: `https://${state.toLowerCase()}.gdprofessionalplumbing.com`,
-      siteName: 'GD Professional Plumbing',
+      title: `United Plumbing CCTX in ${stateFullName} | Licensed Statewide Plumbing Experts`,
+      description: `Find United Plumbing CCTX plumbers across ${stateFullName} for 24/7 emergency response, water heater service, drain cleaning, and full-system repairs.`,
+      url: `https://${state.toLowerCase()}.unitedplumbingcctx.com`,
+      siteName: 'United Plumbing CCTX',
       locale: 'en_US',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Best Licensed & Certified Plumbers in ${stateFullName} | GD Professional Plumbing`,
-      description: `Trusted plumbing experts in ${stateFullName}. Licensed, experienced, and affordable for repairs, installs, or maintenance!`,
+      title: `United Plumbing CCTX in ${stateFullName} | Licensed Statewide Plumbing Experts`,
+      description: `Find United Plumbing CCTX plumbers across ${stateFullName} for 24/7 emergency response, water heater service, drain cleaning, and full-system repairs.`,
     },
     alternates: {
-      canonical: `https://${state.toLowerCase()}.gdprofessionalplumbing.com`,
+      canonical: `https://${state.toLowerCase()}.unitedplumbingcctx.com`,
     },
   };
 }
@@ -89,7 +89,7 @@ export default async function StatePage({ params }: StatePageProps) {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="/images/plumber-hero.jpg" 
             alt="Professional plumber working"
@@ -152,7 +152,7 @@ export default async function StatePage({ params }: StatePageProps) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Types of Plumbing Services We Offer in {stateFullName}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">GD Professional Plumbing Helps You with All Your Plumbing Projects including:</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">United Plumbing CCTX Helps You with All Your Plumbing Projects including:</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Water Heater Repair and Installation */}
@@ -166,7 +166,7 @@ export default async function StatePage({ params }: StatePageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Heater Repair and Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Affordable water heater repair and professional installation for homes and commercial buildings in {stateFullName}—fast service, licensed plumbers, and energy-efficient systems.
+                    Call United Plumbing CCTX at (833) 609-0936. Affordable water heater repair and professional installation for homes and commercial buildings in {stateFullName}—fast service, licensed plumbers, and energy-efficient systems.
                   </p>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default async function StatePage({ params }: StatePageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Tankless Water Heater Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Expert installation of energy-efficient tankless water heaters for homes and businesses in {stateFullName}—endless hot water, lower utility bills, and space-saving design.
+                    Call United Plumbing CCTX at (833) 609-0936. Expert installation of energy-efficient tankless water heaters for homes and businesses in {stateFullName}—endless hot water, lower utility bills, and space-saving design.
                   </p>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default async function StatePage({ params }: StatePageProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Recirculation Pump Repair & Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Professional repair and installation of hot water recirculation pumps for homes and businesses in {stateFullName}—get instant hot water, save water, and boost plumbing efficiency.
+                    Call United Plumbing CCTX at (833) 609-0936. Professional repair and installation of hot water recirculation pumps for homes and businesses in {stateFullName}—get instant hot water, save water, and boost plumbing efficiency.
                   </p>
                 </div>
               </div>

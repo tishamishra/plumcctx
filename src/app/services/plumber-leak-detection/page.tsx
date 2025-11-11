@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Expert Leak Detection & Repair Services in the US | GD Professional Plumbing',
-  description: 'Professional leak detection and repair services across the USA. Advanced technology to quickly locate and repair hidden water leaks. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Electronic Leak Detection & Repair Specialists | United Plumbing CCTX',
+  description: 'Find hidden leaks fast with United Plumbing CCTX. Acoustic, thermal, and tracer-gas diagnostics plus permanent repairs anywhere in the United States.',
   keywords: [
     'leak detection',
     'leak detection services',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'leak repair'
   ],
   openGraph: {
-    title: 'Expert Leak Detection & Repair Services in the US | GD Professional Plumbing',
-    description: 'Professional leak detection and repair services across the USA. Advanced technology to quickly locate and repair hidden water leaks. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-leak-detection',
-    siteName: 'GD Professional Plumbing',
+    title: 'Electronic Leak Detection & Repair Specialists | United Plumbing CCTX',
+    description: 'Find hidden leaks fast with United Plumbing CCTX. Acoustic, thermal, and tracer-gas diagnostics plus permanent repairs anywhere in the United States.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-leak-detection',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Leak Detection & Repair Services in the US | GD Professional Plumbing',
-    description: 'Professional leak detection and repair services across the USA. Advanced technology to quickly locate and repair hidden water leaks. Licensed, insured, and trusted since 1973.',
+    title: 'Electronic Leak Detection & Repair Specialists | United Plumbing CCTX',
+    description: 'Find hidden leaks fast with United Plumbing CCTX. Acoustic, thermal, and tracer-gas diagnostics plus permanent repairs anywhere in the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-leak-detection',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-leak-detection',
   },
 };
 
@@ -53,7 +53,7 @@ export default function LeakDetectionRepairPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Old%20Rusty%20Pipe%20Dripping%20Water.png?updatedAt=1756066951741" 
             alt="Leak detection and repair services"
@@ -107,7 +107,7 @@ export default function LeakDetectionRepairPage() {
                 Are you searching for expert leak detection services?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert. We provide comprehensive leak detection and repair solutions for both residential and commercial properties, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert. We provide comprehensive leak detection and repair solutions for both residential and commercial properties, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -166,7 +166,7 @@ export default function LeakDetectionRepairPage() {
             Leak Detection & Repair Services We Offer
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-            GD Professional Plumbing Helps You with All Your Leak Detection Projects including:
+            United Plumbing CCTX Helps You with All Your Leak Detection Projects including:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,7 +180,7 @@ export default function LeakDetectionRepairPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Advanced Leak Detection</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. State-of-the-art technology to locate hidden leaks accurately.
+                  Call United Plumbing CCTX at (833) 609-0936. State-of-the-art technology to locate hidden leaks accurately.
                 </p>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function LeakDetectionRepairPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Professional Leak Repair</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Expert repair services to fix leaks with lasting solutions.
+                  Call United Plumbing CCTX at (833) 609-0936. Expert repair services to fix leaks with lasting solutions.
                 </p>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function LeakDetectionRepairPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Pipe Leak Detection</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Specialized detection for pipe leaks in walls and underground.
+                  Call United Plumbing CCTX at (833) 609-0936. Specialized detection for pipe leaks in walls and underground.
                 </p>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function LeakDetectionRepairPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Fixture Leak Repair</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Repair leaks in faucets, toilets, and other fixtures.
+                  Call United Plumbing CCTX at (833) 609-0936. Repair leaks in faucets, toilets, and other fixtures.
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function LeakDetectionRepairPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Preventive Leak Inspection</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Regular inspections to prevent future leaks.
+                  Call United Plumbing CCTX at (833) 609-0936. Regular inspections to prevent future leaks.
                 </p>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function LeakDetectionRepairPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Emergency Leak Service</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. 24/7 emergency services for urgent leak issues.
+                  Call United Plumbing CCTX at (833) 609-0936. 24/7 emergency services for urgent leak issues.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function LeakDetectionRepairPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing for Leak Detection Services?
+            Why Choose United Plumbing CCTX for Leak Detection Services?
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
             50+ years of trusted service with licensed professionals and guaranteed workmanship

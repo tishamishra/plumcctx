@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         '/private/',
       ],
     },
-    sitemap: 'https://www.gdprofessionalplumbing.com/sitemap-index.xml',
+    sitemap: 'https://www.unitedplumbingcctx.com/sitemap-index.xml',
   }
 }

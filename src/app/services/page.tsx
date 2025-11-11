@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import ServicesPageContent from '@/components/ServicesPageContent';
 
 export const metadata: Metadata = {
-  title: 'Professional Plumbing Services in the US | GD Professional Plumbing',
-  description: 'Comprehensive plumbing services across the USA including water heater repair, drain cleaning, leak detection, sewer line repair, and emergency plumbing. Licensed, insured, and trusted since 1973.',
+  title: 'United Plumbing CCTX Services | Nationwide Repairs & Maintenance',
+  description: 'Explore water heater, drain, sewer, leak, and remodel solutions delivered across the United States by the licensed pros at United Plumbing CCTX.',
   keywords: [
     'plumbing services',
     'water heater repair',
@@ -27,20 +27,20 @@ export const metadata: Metadata = {
     'plumbing contractor'
   ],
   openGraph: {
-    title: 'Professional Plumbing Services in the US | GD Professional Plumbing',
-    description: 'Comprehensive plumbing services across the USA including water heater repair, drain cleaning, leak detection, sewer line repair, and emergency plumbing.',
-    url: 'https://gdprofessionalplumbing.com/services',
-    siteName: 'GD Professional Plumbing',
+    title: 'United Plumbing CCTX Services | Nationwide Repairs & Maintenance',
+    description: 'Explore water heater, drain, sewer, leak, and remodel solutions delivered across the United States by the licensed pros at United Plumbing CCTX.',
+    url: 'https://unitedplumbingcctx.com/services',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Professional Plumbing Services in the US | GD Professional Plumbing',
-    description: 'Comprehensive plumbing services across the USA including water heater repair, drain cleaning, leak detection, sewer line repair, and emergency plumbing.',
+    title: 'United Plumbing CCTX Services | Nationwide Repairs & Maintenance',
+    description: 'Explore water heater, drain, sewer, leak, and remodel solutions delivered across the United States by the licensed pros at United Plumbing CCTX.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services',
+    canonical: 'https://unitedplumbingcctx.com/services',
   },
 };
 

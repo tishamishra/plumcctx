@@ -32,7 +32,7 @@ export default function FloatingCTA({ phone = '8336090936', locationName = '' }:
           <div className="flex justify-center sm:justify-center ml-8">
             <a
               href={`tel:${phone.replace(/\D/g, '')}`}
-              className="group flex items-center gap-3 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 hover:from-blue-800 hover:via-blue-700 hover:to-blue-800 text-white font-bold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-700/30"
+              className="group flex items-center gap-3 bg-gradient-to-r from-orange-900 via-orange-800 to-orange-900 hover:from-orange-800 hover:via-orange-700 hover:to-orange-800 text-white font-bold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-orange-700/30"
             >
               <PhoneIcon className="h-5 w-5 md:h-6 md:w-6 text-white group-hover:scale-110 transition-transform duration-300" />
               <span className="font-bold tracking-wide">({phone.slice(0,3)}) {phone.slice(3,6)}-{phone.slice(6)}</span>
@@ -46,7 +46,7 @@ export default function FloatingCTA({ phone = '8336090936', locationName = '' }:
         <div className="flex justify-center">
           <a
             href={`tel:${phone.replace(/\D/g, '')}`}
-            className="group flex items-center gap-3 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 hover:from-blue-800 hover:via-blue-700 hover:to-blue-800 text-white font-bold text-base px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-700/30"
+            className="group flex items-center gap-3 bg-gradient-to-r from-orange-900 via-orange-800 to-orange-900 hover:from-orange-800 hover:via-orange-700 hover:to-orange-800 text-white font-bold text-base px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-orange-700/30"
           >
             <PhoneIcon className="h-6 w-6 text-white group-hover:scale-110 transition-transform duration-300" />
             <span className="font-bold tracking-wide">({phone.slice(0,3)}) {phone.slice(3,6)}-{phone.slice(6)}</span>

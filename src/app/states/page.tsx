@@ -1,5 +1,27 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import locationsData from '@/data/locations.json';
+
+export const metadata: Metadata = {
+  title: 'United Plumbing CCTX Service States | Nationwide Coverage Map',
+  description: 'Browse every state served by United Plumbing CCTX and connect with licensed local plumbing teams across the United States.',
+  openGraph: {
+    title: 'United Plumbing CCTX Service States | Nationwide Coverage Map',
+    description: 'Browse every state served by United Plumbing CCTX and connect with licensed local plumbing teams across the United States.',
+    url: 'https://unitedplumbingcctx.com/states',
+    siteName: 'United Plumbing CCTX',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'United Plumbing CCTX Service States | Nationwide Coverage Map',
+    description: 'Browse every state served by United Plumbing CCTX and connect with licensed local plumbing teams across the United States.',
+  },
+  alternates: {
+    canonical: 'https://unitedplumbingcctx.com/states',
+  },
+};
 
 export default function StatesPage() {
   const typedLocationsData = locationsData as { locations: Array<{ id: string; name: string; state: string }> };
@@ -26,7 +48,7 @@ export default function StatesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-orange-600 to-orange-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Plumbing Services by State

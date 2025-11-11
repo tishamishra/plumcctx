@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import AboutPageContent from '@/components/AboutPageContent';
 
 export const metadata: Metadata = {
-  title: 'About GD Professional Plumbing in the US | GD Professional Plumbing',
-  description: 'Learn about GD Professional Plumbing - 50+ years of trusted service across the USA. Licensed, insured, and committed to excellence in residential and commercial plumbing since 1973.',
+  title: 'United Plumbing CCTX Story | National Team of Licensed Plumbers',
+  description: 'Discover how United Plumbing CCTX combines licensed professionals, advanced diagnostic tech, and transparent pricing to serve homes and businesses across the United States.',
   keywords: [
-    'about GD Professional Plumbing',
+    'about United Plumbing CCTX',
     'plumbing company history',
     'trusted plumber',
     'licensed plumber',
     'insured plumber',
     'professional plumbing service',
-    'plumbing company USA',
+    'plumbing company United States',
     'residential plumbing',
     'commercial plumbing',
     'plumbing contractor',
@@ -27,20 +27,20 @@ export const metadata: Metadata = {
     'plumbing service history'
   ],
   openGraph: {
-    title: 'About GD Professional Plumbing in the US | GD Professional Plumbing',
-    description: 'Learn about GD Professional Plumbing - 50+ years of trusted service across the USA. Licensed, insured, and committed to excellence in residential and commercial plumbing since 1973.',
-    url: 'https://gdprofessionalplumbing.com/about',
-    siteName: 'GD Professional Plumbing',
+    title: 'United Plumbing CCTX Story | National Team of Licensed Plumbers',
+    description: 'Discover how United Plumbing CCTX combines licensed professionals, advanced diagnostic tech, and transparent pricing to serve homes and businesses across the United States.',
+    url: 'https://unitedplumbingcctx.com/about',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About GD Professional Plumbing in the US | GD Professional Plumbing',
-    description: 'Learn about GD Professional Plumbing - 50+ years of trusted service across the USA. Licensed, insured, and committed to excellence in residential and commercial plumbing since 1973.',
+    title: 'United Plumbing CCTX Story | National Team of Licensed Plumbers',
+    description: 'Discover how United Plumbing CCTX combines licensed professionals, advanced diagnostic tech, and transparent pricing to serve homes and businesses across the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/about',
+    canonical: 'https://unitedplumbingcctx.com/about',
   },
 };
 

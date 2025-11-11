@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Water System Installation & Repair Services in the US | GD Professional Plumbing',
-  description: 'Professional water system installation, repair, and maintenance services across the USA. We deliver clean, safe, and uninterrupted water flow for residential and commercial properties. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Whole-Home Water System Repairs & Installs | United Plumbing CCTX',
+  description: 'From main lines to filtration, United Plumbing CCTX repairs and installs water systems across the United States with pressure balancing and code compliance.',
   keywords: [
     'water system installation',
     'water system repair',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'licensed plumber'
   ],
   openGraph: {
-    title: 'Water System Installation & Repair Services in the US | GD Professional Plumbing',
-    description: 'Professional water system installation, repair, and maintenance services across the USA. We deliver clean, safe, and uninterrupted water flow for residential and commercial properties.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-water-system-repair',
-    siteName: 'GD Professional Plumbing',
+    title: 'Whole-Home Water System Repairs & Installs | United Plumbing CCTX',
+    description: 'From main lines to filtration, United Plumbing CCTX repairs and installs water systems across the United States with pressure balancing and code compliance.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-water-system-repair',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Water System Installation & Repair Services in the US | GD Professional Plumbing',
-    description: 'Professional water system installation, repair, and maintenance services across the USA. We deliver clean, safe, and uninterrupted water flow for residential and commercial properties.',
+    title: 'Whole-Home Water System Repairs & Installs | United Plumbing CCTX',
+    description: 'From main lines to filtration, United Plumbing CCTX repairs and installs water systems across the United States with pressure balancing and code compliance.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-water-system-repair',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-water-system-repair',
   },
 };
 
@@ -53,7 +53,7 @@ export default function WaterSystemRepairPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Industrial%20Green%20and%20Orange%20Water%20Pipelines?updatedAt=1756066950649" 
             alt="Water system installation and repair"
@@ -107,7 +107,7 @@ export default function WaterSystemRepairPage() {
                 Are you searching for expert water system services?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert. We provide comprehensive water system solutions for both residential and commercial properties, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert. We provide comprehensive water system solutions for both residential and commercial properties, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -216,7 +216,7 @@ export default function WaterSystemRepairPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing?
+            Why Choose United Plumbing CCTX?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex items-start space-x-4">

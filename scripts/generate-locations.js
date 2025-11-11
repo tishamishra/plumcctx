@@ -69,7 +69,7 @@ allLocations.forEach(city => {
     zipCodes: ["00000"],
     image: `/images/${id}.jpg`,
     meta: {
-      title: `Best Licensed & Certified Plumbers in ${city}, ${state} | PlumPro`,
+      title: `Best Licensed & Certified Plumbers in ${city}, ${state} | United Plumbing CCTX`,
       description: `Trusted plumbing experts in ${city}, ${state}. Licensed, experienced, and affordable for repairs, installs, or maintenance! Call (833) 609-0936`
     },
     faqs: [

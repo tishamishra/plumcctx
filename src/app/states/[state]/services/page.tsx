@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: StateServicesPageProps): Prom
   const stateFullName = getStateFullName(stateName);
 
   return {
-    title: `Professional Plumbing Services in ${stateFullName} | GD Professional Plumbing`,
-    description: `Complete plumbing services in ${stateFullName}. Drain cleaning, water heater repair, leak detection, and more. Licensed plumbers available 24/7. Call (833) 609-0936.`,
+    title: `United Plumbing CCTX Services in ${stateFullName} | Statewide Plumbing Solutions`,
+    description: `Explore United Plumbing CCTX services in ${stateFullName}, from water heaters and drains to sewer, gas, and emergency repairs—staffed by licensed plumbers statewide.`,
     keywords: [
       `plumbing services ${stateFullName}`,
       `drain cleaning ${stateFullName}`,
@@ -47,20 +47,20 @@ export async function generateMetadata({ params }: StateServicesPageProps): Prom
       `plumbing installation ${stateFullName}`
     ],
     openGraph: {
-      title: `Professional Plumbing Services in ${stateFullName} | GD Professional Plumbing`,
-      description: `Complete plumbing services in ${stateFullName}. Drain cleaning, water heater repair, leak detection, and more. Licensed plumbers available 24/7.`,
-      url: `https://${state.toLowerCase()}.gdprofessionalplumbing.com/services`,
-      siteName: 'GD Professional Plumbing',
+      title: `United Plumbing CCTX Services in ${stateFullName} | Statewide Plumbing Solutions`,
+      description: `Explore United Plumbing CCTX services in ${stateFullName}, from water heaters and drains to sewer, gas, and emergency repairs—staffed by licensed plumbers statewide.`,
+      url: `https://${state.toLowerCase()}.unitedplumbingcctx.com/services`,
+      siteName: 'United Plumbing CCTX',
       locale: 'en_US',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Professional Plumbing Services in ${stateFullName} | GD Professional Plumbing`,
-      description: `Complete plumbing services in ${stateFullName}. Drain cleaning, water heater repair, leak detection, and more. Licensed plumbers available 24/7.`,
+      title: `United Plumbing CCTX Services in ${stateFullName} | Statewide Plumbing Solutions`,
+      description: `Explore United Plumbing CCTX services in ${stateFullName}, from water heaters and drains to sewer, gas, and emergency repairs—staffed by licensed plumbers statewide.`,
     },
     alternates: {
-      canonical: `https://${state.toLowerCase()}.gdprofessionalplumbing.com/services`,
+      canonical: `https://${state.toLowerCase()}.unitedplumbingcctx.com/services`,
     },
   };
 }
@@ -88,7 +88,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
       
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="/images/plumber-hero.jpg" 
             alt="Professional plumber working"
@@ -123,7 +123,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Complete Plumbing Services in {stateFullName}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">GD Professional Plumbing provides comprehensive plumbing solutions across {stateFullName} including:</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">United Plumbing CCTX provides comprehensive plumbing solutions across {stateFullName} including:</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Water Heater Repair and Installation */}
@@ -137,7 +137,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Heater Repair and Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Affordable water heater repair and professional installation for homes and commercial buildings in {stateFullName}—fast service, licensed plumbers, and energy-efficient systems.
+                    Call United Plumbing CCTX at (833) 609-0936. Affordable water heater repair and professional installation for homes and commercial buildings in {stateFullName}—fast service, licensed plumbers, and energy-efficient systems.
                   </p>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Tankless Water Heater Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Expert installation of energy-efficient tankless water heaters for homes and businesses in {stateFullName}—endless hot water, lower utility bills, and space-saving design.
+                    Call United Plumbing CCTX at (833) 609-0936. Expert installation of energy-efficient tankless water heaters for homes and businesses in {stateFullName}—endless hot water, lower utility bills, and space-saving design.
                   </p>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Recirculation Pump Repair & Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Professional repair and installation of hot water recirculation pumps for homes and businesses in {stateFullName}—get instant hot water, save water, and boost plumbing efficiency.
+                    Call United Plumbing CCTX at (833) 609-0936. Professional repair and installation of hot water recirculation pumps for homes and businesses in {stateFullName}—get instant hot water, save water, and boost plumbing efficiency.
                   </p>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Faucet and Sink Repair & Replacement in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Expert installation and repair of kitchen and bathroom faucets and sinks in {stateFullName}—leak-free performance, upgraded fixtures, and improved space functionality.
+                    Call United Plumbing CCTX at (833) 609-0936. Expert installation and repair of kitchen and bathroom faucets and sinks in {stateFullName}—leak-free performance, upgraded fixtures, and improved space functionality.
                   </p>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water Conservation Plumbing Systems in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Eco-friendly water-saving plumbing solutions for homes and businesses in {stateFullName}—reduce water waste, cut utility bills, and support sustainable living.
+                    Call United Plumbing CCTX at (833) 609-0936. Eco-friendly water-saving plumbing solutions for homes and businesses in {stateFullName}—reduce water waste, cut utility bills, and support sustainable living.
                   </p>
                 </div>
               </div>
@@ -222,7 +222,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Custom Bathroom Renovation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. From outdated to outstanding—our expert team designs and renovates bathrooms in {stateFullName} with modern fixtures, efficient layouts, and timeless appeal for residential properties.
+                    Call United Plumbing CCTX at (833) 609-0936. From outdated to outstanding—our expert team designs and renovates bathrooms in {stateFullName} with modern fixtures, efficient layouts, and timeless appeal for residential properties.
                   </p>
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Water System Installation & Repair in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. We install, repair, and maintain residential and commercial water systems in {stateFullName}—delivering clean, safe, and uninterrupted water flow for your property.
+                    Call United Plumbing CCTX at (833) 609-0936. We install, repair, and maintain residential and commercial water systems in {stateFullName}—delivering clean, safe, and uninterrupted water flow for your property.
                   </p>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Slab Leak Detection & Repair in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Fast and accurate slab leak detection with expert repairs in {stateFullName}—protect your foundation, prevent costly water damage, and preserve your property's structural integrity.
+                    Call United Plumbing CCTX at (833) 609-0936. Fast and accurate slab leak detection with expert repairs in {stateFullName}—protect your foundation, prevent costly water damage, and preserve your property's structural integrity.
                   </p>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Sump Pump Installation & Repair in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Keep your basement dry and protected with professional sump pump repair, installation, and maintenance in {stateFullName}—flood prevention solutions built for long-term reliability.
+                    Call United Plumbing CCTX at (833) 609-0936. Keep your basement dry and protected with professional sump pump repair, installation, and maintenance in {stateFullName}—flood prevention solutions built for long-term reliability.
                   </p>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Professional Drain Cleaning in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Fast and effective drain cleaning for clogged sinks, tubs, and sewer lines in {stateFullName}—restore smooth drainage, eliminate blockages, and prevent future plumbing issues.
+                    Call United Plumbing CCTX at (833) 609-0936. Fast and effective drain cleaning for clogged sinks, tubs, and sewer lines in {stateFullName}—restore smooth drainage, eliminate blockages, and prevent future plumbing issues.
                   </p>
                 </div>
               </div>
@@ -307,7 +307,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Expert Drain Repair in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. We fix damaged or leaking drains with precision in {stateFullName}—prevent backups, water damage, and ensure a smooth-flowing, reliable plumbing system in your home or business.
+                    Call United Plumbing CCTX at (833) 609-0936. We fix damaged or leaking drains with precision in {stateFullName}—prevent backups, water damage, and ensure a smooth-flowing, reliable plumbing system in your home or business.
                   </p>
                 </div>
               </div>
@@ -324,7 +324,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Sewer Line Inspection & Replacement in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Thorough sewer camera inspections, repairs, and full replacements in {stateFullName}—ensure proper waste flow, avoid costly backups, and keep your sewer system running smoothly.
+                    Call United Plumbing CCTX at (833) 609-0936. Thorough sewer camera inspections, repairs, and full replacements in {stateFullName}—ensure proper waste flow, avoid costly backups, and keep your sewer system running smoothly.
                   </p>
                 </div>
               </div>
@@ -341,7 +341,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Gas Line Installation & Repair in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Safe and code-compliant gas line installations, repairs, and replacements in {stateFullName}—power your appliances with confidence and protect your property from gas hazards.
+                    Call United Plumbing CCTX at (833) 609-0936. Safe and code-compliant gas line installations, repairs, and replacements in {stateFullName}—power your appliances with confidence and protect your property from gas hazards.
                   </p>
                 </div>
               </div>
@@ -358,7 +358,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Leak Detection & Repair in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. We use advanced leak detection tools to quickly locate and repair hidden water leaks in {stateFullName}—minimize damage, lower water bills, and keep your plumbing system efficient.
+                    Call United Plumbing CCTX at (833) 609-0936. We use advanced leak detection tools to quickly locate and repair hidden water leaks in {stateFullName}—minimize damage, lower water bills, and keep your plumbing system efficient.
                   </p>
                 </div>
               </div>
@@ -375,7 +375,7 @@ export default async function StateServicesPage({ params }: StateServicesPagePro
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-blue-700 mb-3">» Toilet Repair & Installation in {stateFullName}</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Call GD Professional Plumbing at (833) 609-0936. Fast and reliable toilet plumbing services for clogs, leaks, and replacements in {stateFullName}—restore full function, improve efficiency, and prevent costly water waste.
+                    Call United Plumbing CCTX at (833) 609-0936. Fast and reliable toilet plumbing services for clogs, leaks, and replacements in {stateFullName}—restore full function, improve efficiency, and prevent costly water waste.
                   </p>
                 </div>
               </div>

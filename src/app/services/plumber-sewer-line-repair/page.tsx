@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Expert Sewer Line Inspection & Replacement Services in the US | GD Professional Plumbing',
-  description: 'Professional sewer line inspection and replacement services across the USA. Complete sewer line services with camera technology. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Trenchless Sewer Line Repair & Replacement | United Plumbing CCTX',
+  description: 'United Plumbing CCTX delivers camera inspections, trenchless lining, and full sewer replacements nationwide.',
   keywords: [
     'sewer line repair',
     'sewer line inspection',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'sewer line service'
   ],
   openGraph: {
-    title: 'Expert Sewer Line Inspection & Replacement Services in the US | GD Professional Plumbing',
-    description: 'Professional sewer line inspection and replacement services across the USA. Complete sewer line services with camera technology. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-sewer-line-repair',
-    siteName: 'GD Professional Plumbing',
+    title: 'Trenchless Sewer Line Repair & Replacement | United Plumbing CCTX',
+    description: 'United Plumbing CCTX delivers camera inspections, trenchless lining, and full sewer replacements nationwide.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-sewer-line-repair',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Sewer Line Inspection & Replacement Services in the US | GD Professional Plumbing',
-    description: 'Professional sewer line inspection and replacement services across the USA. Complete sewer line services with camera technology. Licensed, insured, and trusted since 1973.',
+    title: 'Trenchless Sewer Line Repair & Replacement | United Plumbing CCTX',
+    description: 'United Plumbing CCTX delivers camera inspections, trenchless lining, and full sewer replacements nationwide.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-sewer-line-repair',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-sewer-line-repair',
   },
 };
 
@@ -53,7 +53,7 @@ export default function SewerLineInspectionReplacementPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Old%20Rusty%20Underground%20Pipeline.png?updatedAt=1756066953091" 
             alt="Sewer line inspection and replacement services"
@@ -107,7 +107,7 @@ export default function SewerLineInspectionReplacementPage() {
                 Are you searching for expert sewer line services?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert. We provide comprehensive sewer line inspection and replacement solutions for both residential and commercial properties, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert. We provide comprehensive sewer line inspection and replacement solutions for both residential and commercial properties, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -166,7 +166,7 @@ export default function SewerLineInspectionReplacementPage() {
             Sewer Line Services We Offer
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-            GD Professional Plumbing Helps You with All Your Sewer Line Projects including:
+            United Plumbing CCTX Helps You with All Your Sewer Line Projects including:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,7 +180,7 @@ export default function SewerLineInspectionReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Camera Inspection</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Advanced camera technology to inspect sewer lines thoroughly.
+                  Call United Plumbing CCTX at (833) 609-0936. Advanced camera technology to inspect sewer lines thoroughly.
                 </p>
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function SewerLineInspectionReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Sewer Line Repair</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Professional repair services to fix sewer line issues.
+                  Call United Plumbing CCTX at (833) 609-0936. Professional repair services to fix sewer line issues.
                 </p>
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function SewerLineInspectionReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Sewer Line Replacement</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Complete replacement services for damaged sewer lines.
+                  Call United Plumbing CCTX at (833) 609-0936. Complete replacement services for damaged sewer lines.
                 </p>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function SewerLineInspectionReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Drain Cleaning</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Professional drain cleaning to prevent sewer backups.
+                  Call United Plumbing CCTX at (833) 609-0936. Professional drain cleaning to prevent sewer backups.
                 </p>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function SewerLineInspectionReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Trenchless Technology</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. Modern trenchless methods for minimal disruption.
+                  Call United Plumbing CCTX at (833) 609-0936. Modern trenchless methods for minimal disruption.
                 </p>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function SewerLineInspectionReplacementPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-blue-700 mb-3">» Emergency Sewer Service</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Call GD Professional Plumbing at (833) 609-0936. 24/7 emergency services for urgent sewer issues.
+                  Call United Plumbing CCTX at (833) 609-0936. 24/7 emergency services for urgent sewer issues.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function SewerLineInspectionReplacementPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing for Sewer Line Services?
+            Why Choose United Plumbing CCTX for Sewer Line Services?
           </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-4xl mx-auto">
             50+ years of trusted service with licensed professionals and guaranteed workmanship

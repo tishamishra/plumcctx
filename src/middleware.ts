@@ -3,19 +3,20 @@ import { NextResponse, NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
   const url = request.nextUrl;
+  const pathSegmentsInitial = url.pathname.split('/').filter(Boolean);
 
   // Redirect to www version for main domain (SEO best practice)
-  if (hostname === 'gdprofessionalplumbing.com') {
-    url.hostname = 'www.gdprofessionalplumbing.com';
+  if (hostname === 'unitedplumbingcctx.com') {
+    url.hostname = 'www.unitedplumbingcctx.com';
     return NextResponse.redirect(url, 301); // Permanent redirect
   }
 
   // Handle different domain patterns
   let subdomain = '';
   
-  // Handle gdprofessionalplumbing.com domain
-  if (hostname.includes('.gdprofessionalplumbing.com')) {
-    subdomain = hostname.replace('.gdprofessionalplumbing.com', '');
+  // Handle unitedplumbingcctx.com domain
+  if (hostname.includes('.unitedplumbingcctx.com')) {
+    subdomain = hostname.replace('.unitedplumbingcctx.com', '');
   } else if (hostname.includes('localhost')) {
     // For local development, extract subdomain from localhost
     const parts = hostname.split('.');
@@ -28,8 +29,19 @@ export function middleware(request: NextRequest) {
   const stateCodes = ['ca', 'ny', 'tx', 'fl', 'il', 'pa', 'oh', 'ga', 'nc', 'mi', 'nj', 'va', 'wa', 'az', 'ma', 'tn', 'in', 'mo', 'md', 'co', 'mn', 'wi', 'sc', 'al', 'la', 'ky', 'or', 'ok', 'ct', 'ut', 'ia', 'nv', 'ar', 'ms', 'ks', 'ne', 'id', 'nh', 'me', 'nm', 'ri', 'hi', 'mt', 'de', 'sd', 'nd', 'ak', 'vt', 'wy', 'wv'];
   const isStateSubdomain = stateCodes.includes(subdomain.toLowerCase());
 
+  const isStatesPath = pathSegmentsInitial[0] === 'states' && pathSegmentsInitial.length >= 2;
+  const stateParamFromPath = isStatesPath ? pathSegmentsInitial[1].toLowerCase() : null;
+
+  if ((subdomain === '' || subdomain === 'www' || subdomain === 'unitedplumbingcctx') && isStatesPath && stateParamFromPath) {
+    const redirectUrl = new URL(request.url);
+    redirectUrl.hostname = `${stateParamFromPath}.unitedplumbingcctx.com`;
+    redirectUrl.pathname = '/';
+    redirectUrl.search = '';
+    return NextResponse.redirect(redirectUrl, 301);
+  }
+
   // If it's www or the root domain, let it go normally
-  if (subdomain === 'www' || subdomain === 'gdprofessionalplumbing' || subdomain === 'localhost') {
+  if (subdomain === 'www' || subdomain === 'unitedplumbingcctx' || subdomain === 'localhost') {
     return NextResponse.next();
   }
 
@@ -79,8 +91,45 @@ export function middleware(request: NextRequest) {
   }
 
   // Block access to main domain service pages on sub-domains to prevent duplicate content
-  const pathSegments = url.pathname.split('/').filter(Boolean);
-  
+  let pathSegments = url.pathname.split('/').filter(Boolean);
+
+  if (pathSegments.length) {
+    const cleanedSegments = [...pathSegments];
+    let modified = false;
+    while (cleanedSegments.length && (cleanedSegments[cleanedSegments.length - 1] === '$' || cleanedSegments[cleanedSegments.length - 1] === '&')) {
+      cleanedSegments.pop();
+      modified = true;
+    }
+
+    if (modified) {
+      const cleanPath = cleanedSegments.length ? `/${cleanedSegments.join('/')}` : '/';
+      const redirectUrl = new URL(request.url);
+      redirectUrl.pathname = cleanPath;
+      return NextResponse.redirect(redirectUrl, 301);
+    }
+
+    pathSegments = cleanedSegments;
+  }
+
+  if (pathSegments[0] === 'states') {
+    const stateParam = pathSegments.length >= 2 ? pathSegments[1].toLowerCase() : null;
+    const redirectUrl = new URL(request.url);
+
+    if (stateParam) {
+      if (subdomain.toLowerCase() === stateParam) {
+        redirectUrl.pathname = '/';
+      } else {
+        redirectUrl.hostname = `${stateParam}.unitedplumbingcctx.com`;
+        redirectUrl.pathname = '/';
+      }
+    } else {
+      redirectUrl.pathname = '/';
+    }
+
+    redirectUrl.search = '';
+    return NextResponse.redirect(redirectUrl, 301);
+  }
+
   // If trying to access /services/* on sub-domain, redirect to appropriate services page
   if (pathSegments[0] === 'services' && pathSegments.length === 1) {
     if (isStateSubdomain) {
@@ -105,10 +154,12 @@ export function middleware(request: NextRequest) {
     'plumber-faucet-sink-repair',
     'plumber-water-conservation',
     'plumber-bathroom-renovation',
+    'plumber-bathroom-installation',
     'plumber-water-system-repair',
     'plumber-slab-leak-repair',
     'plumber-sump-pump-repair',
     'plumber-drain-cleaning',
+    'plumber-drain-repair',
     'plumber-sewer-line-repair',
     'plumber-gas-line-repair',
     'plumber-leak-detection',
@@ -128,7 +179,6 @@ export function middleware(request: NextRequest) {
 
   // Block access to other main domain pages on sub-domains to prevent duplicate content
   const blockedPaths = [
-    'states',
     'api',
     'robots.txt'
   ];

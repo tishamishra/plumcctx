@@ -1,5 +1,7 @@
 "use client";
 
+import { getPlaceholderImage } from "@/data/imagePlaceholders";
+
 interface FooterProps {
   location?: {
     name: string;
@@ -8,10 +10,11 @@ interface FooterProps {
 }
 
 export default function Footer({ location }: FooterProps) {
+  const footerVan = getPlaceholderImage('footerFleetVan');
   return (
     <>
       {/* 24/7 CTA Banner with Van */}
-      <section className="py-4 px-4 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
+      <section className="py-4 px-4 bg-gradient-to-r from-orange-800 to-orange-900 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left Side - Text Content */}
@@ -36,8 +39,8 @@ export default function Footer({ location }: FooterProps) {
             {/* Right Side - Van Image */}
             <div className="flex-1 flex justify-center lg:justify-end items-end">
               <img 
-                src="/van.png" 
-                alt="Plumbing service van"
+                src={footerVan.defaultUrl} 
+                alt={footerVan.alt}
                 className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 object-contain scale-100 sm:scale-110 lg:scale-150 -mb-4"
               />
             </div>
@@ -69,13 +72,13 @@ export default function Footer({ location }: FooterProps) {
       </section>
 
       {/* Big CTA Banner */}
-      <section className="bg-[#1c7bc8] text-white py-16 px-4 mt-auto">
+      <section className="bg-[#ea580c] text-white py-16 px-4 mt-auto">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 animate-bounce">Need a Plumber Today? Get a Free Quote Now</h2>
           <div className="mb-8">
             <a 
               href="tel:8336090936"
-              className="bg-white text-[#1c7bc8] font-bold px-12 py-6 rounded-xl text-3xl hover:bg-gray-50 transition shadow-lg inline-block animate-pulse"
+              className="bg-white text-[#ea580c] font-bold px-12 py-6 rounded-xl text-3xl hover:bg-gray-50 transition shadow-lg inline-block animate-pulse"
             >
               (833) 609-0936
             </a>

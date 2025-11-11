@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import WaterHeaterRepairPageContent from '@/components/WaterHeaterRepairPageContent';
 
 export const metadata: Metadata = {
-  title: 'Expert Water Heater Repair & Installation Services in the US | GD Professional Plumbing',
-  description: 'Professional water heater repair and installation services across the USA. Fast, reliable service for all water heater types. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Nationwide Water Heater Repair & Replacement | United Plumbing CCTX',
+  description: 'Restore hot water fast with United Plumbing CCTX—licensed techs repair and replace tank and tankless heaters, tune thermostats, and flush systems anywhere in the United States.',
   keywords: [
     'water heater repair',
     'water heater installation',
@@ -27,20 +27,20 @@ export const metadata: Metadata = {
     'water heater installation emergency'
   ],
   openGraph: {
-    title: 'Expert Water Heater Repair & Installation Services in the US | GD Professional Plumbing',
-    description: 'Professional water heater repair and installation services across the USA. Fast, reliable service for all water heater types. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-water-heater-repair',
-    siteName: 'GD Professional Plumbing',
+    title: 'Nationwide Water Heater Repair & Replacement | United Plumbing CCTX',
+    description: 'Restore hot water fast with United Plumbing CCTX—licensed techs repair and replace tank and tankless heaters, tune thermostats, and flush systems anywhere in the United States.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-water-heater-repair',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Water Heater Repair & Installation Services in the US | GD Professional Plumbing',
-    description: 'Professional water heater repair and installation services across the USA. Fast, reliable service for all water heater types. Licensed, insured, and trusted since 1973.',
+    title: 'Nationwide Water Heater Repair & Replacement | United Plumbing CCTX',
+    description: 'Restore hot water fast with United Plumbing CCTX—licensed techs repair and replace tank and tankless heaters, tune thermostats, and flush systems anywhere in the United States.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-water-heater-repair',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-water-heater-repair',
   },
 };
 

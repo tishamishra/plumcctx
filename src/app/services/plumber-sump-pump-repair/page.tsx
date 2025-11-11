@@ -4,8 +4,8 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Sump Pump Installation & Repair Services in the US | GD Professional Plumbing',
-  description: 'Professional sump pump installation, repair, and maintenance services across the USA. Keep your basement dry and protected with flood prevention solutions built for long-term reliability. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Certified Sump Pump Repair & Replacement | United Plumbing CCTX',
+  description: 'Keep basements dry—United Plumbing CCTX services, replaces, and maintains sump and backup pumps across the country.',
   keywords: [
     'sump pump installation',
     'sump pump repair',
@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     'licensed plumber'
   ],
   openGraph: {
-    title: 'Sump Pump Installation & Repair Services in the US | GD Professional Plumbing',
-    description: 'Professional sump pump installation, repair, and maintenance services across the USA. Keep your basement dry and protected with flood prevention solutions built for long-term reliability.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-sump-pump-repair',
-    siteName: 'GD Professional Plumbing',
+    title: 'Certified Sump Pump Repair & Replacement | United Plumbing CCTX',
+    description: 'Keep basements dry—United Plumbing CCTX services, replaces, and maintains sump and backup pumps across the country.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-sump-pump-repair',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sump Pump Installation & Repair Services in the US | GD Professional Plumbing',
-    description: 'Professional sump pump installation, repair, and maintenance services across the USA. Keep your basement dry and protected with flood prevention solutions built for long-term reliability.',
+    title: 'Certified Sump Pump Repair & Replacement | United Plumbing CCTX',
+    description: 'Keep basements dry—United Plumbing CCTX services, replaces, and maintains sump and backup pumps across the country.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-sump-pump-repair',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-sump-pump-repair',
   },
 };
 
@@ -53,7 +53,7 @@ export default function SumpPumpRepairPage() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/Industrial%20Green%20and%20Orange%20Water%20Pipelines?updatedAt=1756066950649" 
             alt="Sump pump installation and repair"
@@ -107,7 +107,7 @@ export default function SumpPumpRepairPage() {
                 Are you searching for expert sump pump services?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert. We provide comprehensive sump pump solutions for both residential and commercial properties, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert. We provide comprehensive sump pump solutions for both residential and commercial properties, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -216,7 +216,7 @@ export default function SumpPumpRepairPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Choose GD Professional Plumbing?
+            Why Choose United Plumbing CCTX?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex items-start space-x-4">

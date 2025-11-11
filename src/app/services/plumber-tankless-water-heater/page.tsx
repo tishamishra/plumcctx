@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import TanklessWaterHeaterPageContent from '@/components/TanklessWaterHeaterPageContent';
 
 export const metadata: Metadata = {
-  title: 'Tankless Water Heater Installation Services | Expert Installation Across the US',
-  description: 'Professional tankless water heater installation services across the USA. Energy-efficient, endless hot water, lower utility bills. Licensed, insured, and trusted since 1973. Call (833) 609-0936.',
+  title: 'Tankless Water Heater Installers & Maintenance Experts | United Plumbing CCTX',
+  description: 'Upgrade to endless hot water with United Plumbing CCTX. We size, install, and service tankless systems coast to coast with rebate guidance and annual maintenance plans.',
   keywords: [
     'tankless water heater installation',
     'tankless water heater services',
@@ -27,20 +27,20 @@ export const metadata: Metadata = {
     'tankless water heater installation endless hot water'
   ],
   openGraph: {
-    title: 'Tankless Water Heater Installation Services | Expert Installation Across the US',
-    description: 'Professional tankless water heater installation services across the USA. Energy-efficient, endless hot water, lower utility bills. Licensed, insured, and trusted since 1973.',
-    url: 'https://gdprofessionalplumbing.com/services/plumber-tankless-water-heater',
-    siteName: 'GD Professional Plumbing',
+    title: 'Tankless Water Heater Installers & Maintenance Experts | United Plumbing CCTX',
+    description: 'Upgrade to endless hot water with United Plumbing CCTX. We size, install, and service tankless systems coast to coast with rebate guidance and annual maintenance plans.',
+    url: 'https://unitedplumbingcctx.com/services/plumber-tankless-water-heater',
+    siteName: 'United Plumbing CCTX',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tankless Water Heater Installation Services | Expert Installation Across the US',
-    description: 'Professional tankless water heater installation services across the USA. Energy-efficient, endless hot water, lower utility bills. Licensed, insured, and trusted since 1973.',
+    title: 'Tankless Water Heater Installers & Maintenance Experts | United Plumbing CCTX',
+    description: 'Upgrade to endless hot water with United Plumbing CCTX. We size, install, and service tankless systems coast to coast with rebate guidance and annual maintenance plans.',
   },
   alternates: {
-    canonical: 'https://gdprofessionalplumbing.com/services/plumber-tankless-water-heater',
+    canonical: 'https://unitedplumbingcctx.com/services/plumber-tankless-water-heater',
   },
 };
 

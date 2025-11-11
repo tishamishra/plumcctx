@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   
   if (!location) {
     return {
-      title: 'Contact Us | GD Professional Plumbing',
+      title: 'Contact Us | United Plumbing CCTX',
       description: 'Need plumbing help? Contact our team today for fast, affordable plumbing services, including water heater repair, drain cleaning & emergency plumbing.'
     };
   }
@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       description: `Need plumbing help in ${location.name}? Contact our team today for fast, affordable plumbing services, including water heater repair, drain cleaning & emergency plumbing.`,
       type: 'website',
       locale: 'en_US',
-      siteName: 'GD Professional Plumbing'
+      siteName: 'United Plumbing CCTX'
     },
     twitter: {
       card: 'summary_large_image',
@@ -88,7 +88,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       description: `Need plumbing help in ${location.name}? Contact our team today for fast, affordable plumbing services, including water heater repair, drain cleaning & emergency plumbing.`
     },
     alternates: {
-      canonical: `https://${location.id}.gdprofessionalplumbing.com/contact`
+      canonical: `https://${location.id}.unitedplumbingcctx.com/contact`
     }
   };
 }
@@ -153,7 +153,7 @@ export default async function ContactPage({ params }: LocationPageProps) {
             alt="Professional plumber working"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-700/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60"></div>
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-6xl mx-auto">
@@ -238,7 +238,7 @@ export default async function ContactPage({ params }: LocationPageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose GD Professional Plumbing in {location.name}?
+              Why Choose United Plumbing CCTX in {location.name}?
             </h2>
             <p className="text-xl text-gray-600">
               Trusted by thousands of customers in {location.name} and surrounding areas

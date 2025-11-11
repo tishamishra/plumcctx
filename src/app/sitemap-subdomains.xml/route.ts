@@ -44,7 +44,7 @@ export async function GET() {
   // Generate individual city sitemap entries
   const citySitemaps = (locationsData as LocationsData).locations.map((location: LocationData) => 
     `<sitemap>
-    <loc>https://${location.id}.gdprofessionalplumbing.com/sitemap.xml</loc>
+    <loc>https://${location.id}.unitedplumbingcctx.com/sitemap.xml</loc>
     <lastmod>${currentDate}</lastmod>
   </sitemap>`
   ).join('\n')
@@ -53,7 +53,7 @@ export async function GET() {
   const stateCodes = ['ca', 'ny', 'tx', 'fl', 'il', 'pa', 'oh', 'ga', 'nc', 'mi', 'nj', 'va', 'wa', 'az', 'ma', 'tn', 'in', 'mo', 'md', 'co', 'mn', 'wi', 'sc', 'al', 'la', 'ky', 'or', 'ok', 'ct', 'ut', 'ia', 'nv', 'ar', 'ms', 'ks', 'ne', 'id', 'nh', 'me', 'nm', 'ri', 'hi', 'mt', 'de', 'sd', 'nd', 'ak', 'vt', 'wy', 'wv'];
   const stateSitemaps = stateCodes.map((state) => 
     `<sitemap>
-    <loc>https://${state}.gdprofessionalplumbing.com/sitemap.xml</loc>
+    <loc>https://${state}.unitedplumbingcctx.com/sitemap.xml</loc>
     <lastmod>${currentDate}</lastmod>
   </sitemap>`
   ).join('\n')

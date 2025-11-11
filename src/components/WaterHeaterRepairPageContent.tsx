@@ -11,7 +11,7 @@ export default function WaterHeaterRepairPageContent() {
       
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60">
           <img 
             src="https://ik.imagekit.io/nang9yead/water-heater.jpg" 
             alt="Water heaters repair and installation services"
@@ -65,7 +65,7 @@ export default function WaterHeaterRepairPageContent() {
                 Are you searching for expert water heater services in the US?
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Look no further! GD Professional Plumbing is your trusted plumbing expert in the USA. We provide comprehensive water heater solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
+                Look no further! United Plumbing CCTX is your trusted plumbing expert in the USA. We provide comprehensive water heater solutions for both residential and commercial properties throughout the US, with 24/7 emergency service availability.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">

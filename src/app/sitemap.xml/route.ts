@@ -8,13 +8,13 @@ export async function GET() {
   
   // Extract subdomain from host
   let subdomain = ''
-  if (host.includes('.gdprofessionalplumbing.com')) {
-    subdomain = host.replace('.gdprofessionalplumbing.com', '')
+  if (host.includes('.unitedplumbingcctx.com')) {
+    subdomain = host.replace('.unitedplumbingcctx.com', '')
   }
   
   // If it's the main domain, redirect to sitemap-main.xml
-  if (subdomain === 'www' || subdomain === 'gdprofessionalplumbing' || !subdomain) {
-    return NextResponse.redirect('https://www.gdprofessionalplumbing.com/sitemap-main.xml', 301)
+  if (subdomain === 'www' || subdomain === 'unitedplumbingcctx' || !subdomain) {
+    return NextResponse.redirect('https://www.unitedplumbingcctx.com/sitemap-main.xml', 301)
   }
 
   // Note: State subdomain detection is not needed for sitemap generation
@@ -38,7 +38,7 @@ export async function GET() {
     'plumber-emergency-service'
   ]
   
-  const baseUrl = `https://${subdomain}.gdprofessionalplumbing.com`
+  const baseUrl = `https://${subdomain}.unitedplumbingcctx.com`
   
   // Main pages for this subdomain
   const mainPages = [

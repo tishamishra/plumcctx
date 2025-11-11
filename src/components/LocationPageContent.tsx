@@ -110,7 +110,7 @@ export default function LocationPageContent({ location }: LocationPageContentPro
       {/* Why Choose Us */}
       <section className="py-16 px-4 max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          Why Choose PlumPro in {location.name}?
+          Why Choose United Plumbing CCTX in {location.name}?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">

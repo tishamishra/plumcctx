@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { getPlaceholderImage, type PlaceholderName, type ImagePlaceholder } from '@/data/imagePlaceholders';
 
 export default function AboutPageContent() {
   const [activeTab, setActiveTab] = useState('story');
@@ -11,6 +12,7 @@ export default function AboutPageContent() {
   const [currentExperience, setCurrentExperience] = useState(0);
   const [currentCustomers, setCurrentCustomers] = useState(0);
   const [currentProjects, setCurrentProjects] = useState(0);
+  const [resolvedImages, setResolvedImages] = useState<Record<PlaceholderName, { url: string; alt: string }>>({});
 
   useEffect(() => {
     setIsVisible(true);
@@ -44,6 +46,42 @@ export default function AboutPageContent() {
     return () => clearTimeout(timeout);
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadImages = async () => {
+      try {
+        const response = await fetch('/api/imagekit-placeholders');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch placeholder images: ${response.status}`);
+        }
+        const data = await response.json();
+        if (isMounted && data?.placeholders) {
+          setResolvedImages(data.placeholders as Record<PlaceholderName, { url: string; alt: string }>);
+        }
+      } catch (error) {
+        console.error('Failed to load ImageKit placeholders', error);
+      }
+    };
+
+    loadImages();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const resolvePlaceholder = (placeholder: ImagePlaceholder) => {
+    const resolved = resolvedImages[placeholder.key];
+    return {
+      url: resolved?.url ?? placeholder.defaultUrl,
+      alt: resolved?.alt ?? placeholder.alt,
+    };
+  };
+
+  const heroImage = resolvePlaceholder(getPlaceholderImage('heroBackground'));
+  const aboutStoryImage = resolvePlaceholder(getPlaceholderImage('aboutSideImage'));
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -52,33 +90,33 @@ export default function AboutPageContent() {
       <section className="relative h-[80vh] overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://ik.imagekit.io/nang9yead/Smiling%20Plumber%20Holding%20Wrench%20in%20Kitchen.png?updatedAt=1756066963942"
-            alt="Professional plumber working"
+            src={heroImage.url}
+            alt={heroImage.alt}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-700/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60"></div>
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-6xl mx-auto">
             <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="mb-6">
-                <span className="bg-red-600 text-white px-6 py-3 rounded-full text-sm font-semibold animate-pulse">
-                  Since 1973
+                <span className="bg-[#ea580c] text-white px-6 py-3 rounded-full text-sm font-semibold animate-pulse">
+                  Trusted Service
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                About GD Professional Plumbing in the US
+                About United Plumbing CCTX in Texas
               </h1>
               <p className="text-xl md:text-2xl lg:text-3xl opacity-95 max-w-4xl mx-auto leading-relaxed mb-8">
-                Five decades of trusted service across the USA, innovation, and unwavering commitment to excellence
+                Years of trusted service across Texas, innovation, and unwavering commitment to excellence
               </p>
               <div className="flex justify-center">
                 <a 
                   href="tel:+18336090936" 
-                  className="group relative bg-white text-blue-700 font-bold px-8 py-4 rounded-xl text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-3 animate-pulse"
+                  className="group relative bg-white text-[#ea580c] font-bold px-8 py-4 rounded-xl text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-3 animate-pulse"
                 >
                   <div className="relative">
-                    <svg className="w-6 h-6 animate-bounce text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 animate-bounce text-[#ea580c]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"/>
                     </svg>
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
@@ -92,7 +130,7 @@ export default function AboutPageContent() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-[#1c7bc8] to-[#0f5a9e] text-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-[#ea580c] to-[#c2410c] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center group">
@@ -165,20 +203,20 @@ export default function AboutPageContent() {
                     <h3 className="text-3xl font-bold text-gray-900 mb-6">A Legacy of Excellence Across the USA Since 1973</h3>
                     <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                       <p>
-                        Founded in 1973 by George Davidson, GD Professional Plumbing began as a small family business with a simple mission: to provide honest, reliable plumbing services throughout the United States. What started as a one-man operation has grown into one of the most trusted names in professional plumbing services across the entire USA.
+                        Founded in 1973 by George Davidson, United Plumbing CCTX began as a small family business with a simple mission: to provide honest, reliable plumbing services throughout the United States. What started as a one-man operation has grown into one of the most trusted names in professional plumbing services across the entire USA.
                       </p>
                       <p>
                         Over the past five decades, we've witnessed the evolution of plumbing technology, from basic pipe systems to sophisticated smart home solutions. Through it all, we've maintained our commitment to quality, integrity, and customer satisfaction while expanding our reach to serve communities nationwide.
                       </p>
                       <p>
-                        Today, GD Professional Plumbing serves thousands of residential and commercial customers across the US with a team of over 50 licensed professionals, state-of-the-art equipment, and unwavering dedication to excellence in every state we operate.
+                        Today, United Plumbing CCTX serves thousands of residential and commercial customers across the US with a team of over 50 licensed professionals, state-of-the-art equipment, and unwavering dedication to excellence in every state we operate.
                       </p>
                     </div>
                   </div>
                   <div className="relative">
                     <img 
-                      src="https://ik.imagekit.io/nang9yead/Plumber%20Fixing%20Leaking%20Sink%20Pipe%20with%20Wrench.png?updatedAt=1756066955385"
-                      alt="Plumber working professionally"
+                      src={aboutStoryImage.url}
+                      alt={aboutStoryImage.alt}
                       className="rounded-2xl shadow-xl w-full h-64 sm:h-80 lg:h-96 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
@@ -259,7 +297,7 @@ export default function AboutPageContent() {
                     {
                       year: '1973',
                       title: 'Company Founded',
-                      description: 'George Davidson establishes GD Professional Plumbing as a small family business.'
+                      description: 'George Davidson establishes United Plumbing CCTX as a small family business.'
                     },
                     {
                       year: '1985',
@@ -303,11 +341,11 @@ export default function AboutPageContent() {
         </div>
       </section>
 
-      {/* Why Choose GD Professional Plumbing? */}
+      {/* Why Choose United Plumbing CCTX? */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose GD Professional Plumbing?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose United Plumbing CCTX?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">50+ years of trusted service with licensed professionals and guaranteed workmanship</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
