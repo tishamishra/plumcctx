@@ -89,6 +89,9 @@ export default function Home() {
     ]),
   ) as Record<keyof typeof servicePlaceholders, { url: string; alt: string }>;
 
+  const SITE_NAME = "United Plumbing CCTX";
+  const PHONE = "(833) 609-0936";
+
   return (
     <div className="bg-white min-h-screen flex flex-col font-sans">
       <Header />
@@ -104,7 +107,7 @@ export default function Home() {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-orange-900/70 to-orange-700/60"></div>
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center justify-center pb-20 md:pb-0">
+        <div className="relative z-10 h-full flex items-center justify-center pb-12 md:pb-0">
           <div className="text-center text-white px-6 max-w-4xl mx-auto">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
               Top-Rated Plumbing Services in the US
@@ -125,19 +128,25 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Trusted Residential & Commercial Plumbing Services in the US</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Reliable Residential & Commercial Plumbing Services Across the US</h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  At United Plumbing CCTX, we&apos;ve been helping Americans keep their pipes in check with real, no-nonsense plumbing services. Whether it&apos;s a busted water heater, a stubborn drain, or a full remodel, our team shows up ready to fix it—without the upsell or drama.
+                  At United Plumbing CCTX, we’ve been keeping homes and businesses running smoothly since 1973. From leaky faucets and broken water heaters to full plumbing remodels, our expert team handles it all—fast, honest, and hassle-free.
                 </p>
                 <p>
-                  We&apos;re a dedicated crew of licensed and insured professionals who take pride in our work. If we say we&apos;ll be there at 9, we show up at 8:55. No shortcuts. No guessing games. Just solid plumbing done right the first time.
+                  We don’t believe in shortcuts or sales gimmicks. Just honest work, fair pricing, and plumbing done right the first time. When you call us, you get licensed professionals who show up on time, every time, ready to get the job done.
                 </p>
                 <p>
-                  Need something fixed or upgraded? Give United Plumbing CCTX a call. We&apos;ll take care of it like pros—because that&apos;s exactly what we are.
+                  Whether it’s an emergency repair, a new installation, or a routine inspection, we treat every project like it’s in our own home—with care, precision, and pride.
                 </p>
               </div>
               <div className="mt-8 space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-3">
+                    <span role="img" aria-label="wrench">🛠️</span>
+                    Why Homeowners & Businesses Trust United Plumbing CCTX
+                  </h3>
+                </div>
                 <div className="flex items-start gap-3">
                   <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -145,8 +154,19 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Licensed & Insured</h3>
-                    <p className="text-gray-600 text-sm">All our plumbers are fully licensed, bonded, and insured for your complete peace of mind.</p>
+                    <h3 className="font-semibold text-gray-900">Licensed, Bonded & Insured</h3>
+                    <p className="text-gray-600 text-sm">Your safety and satisfaction come first. Every plumber on our team is certified, experienced, and fully insured for total peace of mind.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">24/7 Emergency Plumbing Service</h3>
+                    <p className="text-gray-600 text-sm">Burst pipe at midnight? We’ve got you covered. Our emergency plumbers are available day or night with a guaranteed same-day response.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -156,8 +176,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">50+ Years Experience</h3>
-                    <p className="text-gray-600 text-sm">Established in 1973, we bring decades of expertise to every plumbing project.</p>
+                    <h3 className="font-semibold text-gray-900">Over 50 Years of Experience</h3>
+                    <p className="text-gray-600 text-sm">Proudly serving America since 1973, we’ve built our reputation on integrity, reliability, and long-lasting workmanship.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -167,19 +187,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">24/7 Emergency Service</h3>
-                    <p className="text-gray-600 text-sm">Round-the-clock emergency plumbing services with guaranteed same-day response.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="bg-[#ea580c] text-white rounded-full p-2 mt-1">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M5 13l4 4L19 7"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Guaranteed Workmanship</h3>
-                    <p className="text-gray-600 text-sm">We stand behind every job with our comprehensive workmanship guarantee.</p>
+                    <h3 className="font-semibold text-gray-900">Guaranteed Quality Workmanship</h3>
+                    <p className="text-gray-600 text-sm">We stand behind every repair, installation, and remodel with our 100% satisfaction guarantee. If something’s not right, we’ll make it right—no excuses.</p>
                   </div>
                 </div>
               </div>
@@ -234,9 +243,9 @@ export default function Home() {
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Water Heater Repair & Installation in the US</h3>
-                    <p className="text-gray-600">
-                      Affordable water heater repair and professional installation for homes and commercial buildings in US—fast service, licensed plumbers, and energy-efficient systems.
-                    </p>
+              <p className="text-gray-600">
+                    {`Call ${SITE_NAME} at ${PHONE}. Water heater repair and installation in the US — fast, reliable service that restores hot water and improves efficiency.`}
+                  </p>
                   </div>
                 </div>
               </Link>
@@ -252,7 +261,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Tankless Water Heater Installation in the US</h3>
                     <p className="text-gray-600">
-                      Expert installation of energy-efficient tankless water heaters for homes and businesses in the US—endless hot water, lower utility bills, and space-saving design.
+                      {`Call ${SITE_NAME} at ${PHONE}. Tankless water heater installation in the US — endless hot water, lower utility costs, and space-saving designs.`}
                     </p>
                   </div>
                 </div>
@@ -269,7 +278,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Water Recirculation Pump in the US</h3>
                     <p className="text-gray-600">
-                      Professional repair and installation of hot water recirculation pumps for homes and businesses in the US—get instant hot water, save water, and boost plumbing efficiency.
+                      {`Call ${SITE_NAME} at ${PHONE}. Hot water recirculation pump services in the US — instant hot water, water savings, and improved plumbing performance.`}
                     </p>
                   </div>
                 </div>
@@ -286,7 +295,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Faucets & Sinks in the US</h3>
                     <p className="text-gray-600">
-                      Expert installation and repair of kitchen and bathroom faucets and sinks in the US—leak-free performance, upgraded fixtures, and improved space functionality.
+                      {`Call ${SITE_NAME} at ${PHONE}. Faucet and sink repair in the US — leak-free fixtures, upgraded finishes, and dependable installations.`}
                     </p>
                   </div>
                 </div>
@@ -303,7 +312,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Water Conservation Plumbing in the US</h3>
                     <p className="text-gray-600">
-                      Eco-friendly water-saving plumbing solutions for homes and businesses in the US—reduce water waste, cut utility bills, and support sustainable living.
+                      {`Call ${SITE_NAME} at ${PHONE}. Water conservation plumbing in the US — eco-friendly upgrades that reduce waste and lower utility bills.`}
                     </p>
                   </div>
                 </div>
@@ -320,7 +329,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Custom Bathroom Renovation in the US</h3>
                     <p className="text-gray-600">
-                      From outdated to outstanding—our expert team designs and renovates bathrooms with modern fixtures, efficient layouts, and timeless appeal for residential properties in the US.
+                      {`Call ${SITE_NAME} at ${PHONE}. Bathroom renovation plumbing in the US — modern layouts, premium fixtures, and code-compliant installs.`}
                     </p>
                   </div>
                 </div>
@@ -337,7 +346,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Water System Installation & Repair in the US</h3>
                     <p className="text-gray-600">
-                      We install, repair, and maintain residential and commercial water systems in the US—delivering clean, safe, and uninterrupted water flow for your property.
+                      {`Call ${SITE_NAME} at ${PHONE}. Water system installation and repair in the US — clean, dependable water flow for homes and businesses.`}
                     </p>
                   </div>
                 </div>
@@ -354,7 +363,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Slab Leak Detection & Repair in the USA</h3>
                     <p className="text-gray-600">
-                      Fast and accurate slab leak detection with expert repairs in the US—protect your foundation, prevent costly water damage, and preserve your property's structural integrity.
+                      {`Call ${SITE_NAME} at ${PHONE}. Slab leak detection in the US — precise locating and repairs that protect your foundation.`}
                     </p>
                   </div>
                 </div>
@@ -371,7 +380,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Sump Pump Installation & Repair in the US</h3>
                     <p className="text-gray-600">
-                      Keep your basement dry and protected with professional sump pump repair, installation, and maintenance in the US—flood prevention solutions built for long-term reliability.
+                      {`Call ${SITE_NAME} at ${PHONE}. Sump pump services in the US — installations, repairs, and maintenance that prevent flooding.`}
                     </p>
                   </div>
                 </div>
@@ -388,7 +397,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Professional Drain Cleaning in the US</h3>
                     <p className="text-gray-600">
-                      Fast and effective drain cleaning for clogged sinks, tubs, and sewer lines in the US—restore smooth drainage, eliminate blockages, and prevent future plumbing issues.
+                      {`Call ${SITE_NAME} at ${PHONE}. Drain cleaning in the US — clear clogs fast and keep your plumbing flowing smoothly.`}
                     </p>
                   </div>
                 </div>
@@ -407,7 +416,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Sewer Line Inspection & Replacement in the US</h3>
                     <p className="text-gray-600">
-                      Thorough sewer camera inspections, repairs, and full replacements in the US—ensure proper waste flow, avoid costly backups, and keep your sewer system running smoothly.
+                      {`Call ${SITE_NAME} at ${PHONE}. Sewer line inspection and replacement in the US — camera diagnostics and long-lasting repairs.`}
                     </p>
                   </div>
                 </div>
@@ -424,7 +433,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Gas Line Installation & Repair in the US</h3>
                     <p className="text-gray-600">
-                      Safe and code-compliant gas line installations, repairs, and replacements in the US—power your appliances with confidence and protect your property from gas hazards.
+                      {`Call ${SITE_NAME} at ${PHONE}. Gas line installation and repair in the US — code-compliant service that keeps your property safe.`}
                     </p>
                   </div>
                 </div>
@@ -441,7 +450,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Leak Detection & Repair in the US</h3>
                     <p className="text-gray-600">
-                      We use advanced leak detection tools to quickly locate and repair hidden water leaks in the US—minimize damage, lower water bills, and keep your plumbing system efficient.
+                      {`Call ${SITE_NAME} at ${PHONE}. Leak detection and repair in the US — advanced technology to stop hidden leaks and prevent damage.`}
                     </p>
                   </div>
                 </div>
@@ -458,7 +467,7 @@ export default function Home() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4 text-black">Toilet Repair & Installation in the US</h3>
                     <p className="text-gray-600">
-                      Fast and reliable toilet plumbing services for clogs, leaks, and replacements in the US—restore full function, improve efficiency, and prevent costly water waste.
+                      {`Call ${SITE_NAME} at ${PHONE}. Toilet repair and installation in the US — efficient fixes and upgrades for dependable performance.`}
                     </p>
                   </div>
                 </div>

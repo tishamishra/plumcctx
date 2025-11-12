@@ -42,7 +42,7 @@ export default function FloatingCTA({ phone = '8336090936', locationName = '' }:
       </div>
 
       {/* Mobile Call Button Only */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full px-4 z-20 md:hidden">
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-full px-4 z-20 md:hidden">
         <div className="flex justify-center">
           <a
             href={`tel:${phone.replace(/\D/g, '')}`}

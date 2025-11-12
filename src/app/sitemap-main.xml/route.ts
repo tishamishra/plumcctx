@@ -22,10 +22,12 @@ export async function GET() {
     'plumber-faucet-sink-repair',
     'plumber-water-conservation',
     'plumber-bathroom-renovation',
+    'plumber-bathroom-installation',
     'plumber-water-system-repair',
     'plumber-slab-leak-repair',
     'plumber-sump-pump-repair',
     'plumber-drain-cleaning',
+    'plumber-drain-repair',
     'plumber-sewer-line-repair',
     'plumber-gas-line-repair',
     'plumber-leak-detection',
@@ -87,45 +89,76 @@ export async function GET() {
   const typedLocationsData = locationsData as LocationsData;
   const uniqueStates = [...new Set(typedLocationsData.locations.map(loc => loc.state))];
 
-  // State pages
-  const statePages = uniqueStates.map(state => 
-    `  <url>
-    <loc>https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}</loc>
+  // State subdomain landing pages
+  const stateSubdomainPages = uniqueStates.map((state) => {
+    const stateSlug = state.toLowerCase()
+    return `  <url>
+    <loc>https://${stateSlug}.unitedplumbingcctx.com/</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>`
-  ).join('\n')
+  }).join('\n')
 
-  // State services pages
-  const stateServicesPages = uniqueStates.flatMap(state =>
-    serviceSlugs.map(service => 
-      `  <url>
-    <loc>https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}/${service}</loc>
+  // State subdomain support pages (services index, about, contact)
+  const stateSubdomainSupportPages = uniqueStates.flatMap((state) => {
+    const stateSlug = state.toLowerCase()
+    const paths = ['services', 'about', 'contact']
+    return paths.map((path) => `  <url>
+    <loc>https://${stateSlug}.unitedplumbingcctx.com/${path}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`)
+  }).join('\n')
+
+  // State subdomain service detail pages
+  const stateSubdomainServicePages = uniqueStates.flatMap((state) => {
+    const stateSlug = state.toLowerCase()
+    return serviceSlugs.map((service) => `  <url>
+    <loc>https://${stateSlug}.unitedplumbingcctx.com/services/${service}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>`
-    )
-  ).join('\n')
+  </url>`)
+  }).join('\n')
 
-  // State services index pages
-  const stateServicesIndexPages = uniqueStates.map(state => 
-    `  <url>
-    <loc>https://www.unitedplumbingcctx.com/states/${state.toLowerCase()}/services</loc>
+  // Location subdomain landing pages
+  const locationSubdomainPages = typedLocationsData.locations.map((location) => `  <url>
+    <loc>https://${location.id}.unitedplumbingcctx.com/</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>`
+  </url>`).join('\n')
+
+  // Location subdomain services index pages
+  const locationSubdomainServicesPages = typedLocationsData.locations.map((location) => `  <url>
+    <loc>https://${location.id}.unitedplumbingcctx.com/services</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n')
+
+  // Location subdomain service detail pages
+  const locationSubdomainServicePages = typedLocationsData.locations.flatMap((location) =>
+    serviceSlugs.map((service) => `  <url>
+    <loc>https://${location.id}.unitedplumbingcctx.com/${service}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>`)
   ).join('\n')
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${mainPages}
 ${mainServicePages}
-${statePages}
-${stateServicesIndexPages}
-${stateServicesPages}
+${stateSubdomainPages}
+${stateSubdomainSupportPages}
+${stateSubdomainServicePages}
+${locationSubdomainPages}
+${locationSubdomainServicesPages}
+${locationSubdomainServicePages}
 </urlset>`
 
   return new NextResponse(sitemap, {
