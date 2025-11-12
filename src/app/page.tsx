@@ -11,7 +11,7 @@ export default function Home() {
   // Updated homepage with new service card design
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [resolvedImages, setResolvedImages] = useState<Record<PlaceholderName, { url: string; alt: string }>>({});
+  const [resolvedImages, setResolvedImages] = useState<Record<PlaceholderName, { url: string; alt: string }> | null>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -72,7 +72,7 @@ export default function Home() {
   const splitSectionPlaceholder = getPlaceholderImage('splitSectionProfessional');
 
   const resolvePlaceholder = (placeholder: ImagePlaceholder) => {
-    const resolved = resolvedImages[placeholder.key];
+    const resolved = resolvedImages?.[placeholder.key];
     return {
       url: resolved?.url ?? placeholder.defaultUrl,
       alt: resolved?.alt ?? placeholder.alt,

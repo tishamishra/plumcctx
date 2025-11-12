@@ -12,7 +12,7 @@ export default function AboutPageContent() {
   const [currentExperience, setCurrentExperience] = useState(0);
   const [currentCustomers, setCurrentCustomers] = useState(0);
   const [currentProjects, setCurrentProjects] = useState(0);
-  const [resolvedImages, setResolvedImages] = useState<Record<PlaceholderName, { url: string; alt: string }>>({});
+  const [resolvedImages, setResolvedImages] = useState<Record<PlaceholderName, { url: string; alt: string }> | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -72,7 +72,7 @@ export default function AboutPageContent() {
   }, []);
 
   const resolvePlaceholder = (placeholder: ImagePlaceholder) => {
-    const resolved = resolvedImages[placeholder.key];
+    const resolved = resolvedImages?.[placeholder.key];
     return {
       url: resolved?.url ?? placeholder.defaultUrl,
       alt: resolved?.alt ?? placeholder.alt,

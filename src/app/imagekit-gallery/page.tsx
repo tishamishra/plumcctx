@@ -1,21 +1,66 @@
 import Image from 'next/image';
+import fs from 'fs/promises';
+import path from 'path';
+import type { ImageKitFile } from '@/lib/imagekit';
 
 export const revalidate = 300;
 
-async function fetchImages() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+async function loadSnapshot(): Promise<ImageKitFile[]> {
+  try {
+    const filePath = path.join(process.cwd(), 'public', 'imagekit-images.json');
+    const raw = await fs.readFile(filePath, 'utf-8');
+    const parsed = JSON.parse(raw);
+    if (parsed && Array.isArray(parsed.images)) {
+      return parsed.images as ImageKitFile[];
+    }
+  } catch (error) {
+    console.warn('[imagekit-gallery] Unable to read snapshot file', error);
+  }
+  return [];
+}
 
-  const response = await fetch(`${baseUrl}/api/imagekit-files`, {
-    next: { revalidate },
-  });
+async function fetchImages(): Promise<Array<{ id: string; url: string; name?: string }>> {
+  const baseUrl = (() => {
+    if (process.env.NEXT_PUBLIC_SITE_URL) {
+      return process.env.NEXT_PUBLIC_SITE_URL;
+    }
+    if (process.env.VERCEL_URL) {
+      return `https://${process.env.VERCEL_URL}`;
+    }
+    return undefined;
+  })();
 
-  if (!response.ok) {
-    console.error('Failed to fetch images from ImageKit:', response.statusText);
-    return [];
+  if (baseUrl) {
+    try {
+      const response = await fetch(`${baseUrl}/api/imagekit-files`, {
+        next: { revalidate },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (Array.isArray(data?.images)) {
+          return data.images;
+        }
+      } else {
+        console.warn('[imagekit-gallery] ImageKit API responded with', response.status);
+      }
+    } catch (error) {
+      console.warn('[imagekit-gallery] Failed to fetch images from API route', error);
+    }
   }
 
-  const data = await response.json();
-  return data.images ?? [];
+  const snapshot = await loadSnapshot();
+  return snapshot.map((image) => {
+    const url = image.url
+      || (process.env.IMAGEKIT_URL_ENDPOINT && image.filePath
+        ? `${process.env.IMAGEKIT_URL_ENDPOINT}${image.filePath}`
+        : '');
+    return {
+      id: image.id,
+      name: image.name,
+      url,
+    };
+  }).filter((image) => Boolean(image.url));
 }
 
 export default async function ImageKitGalleryPage() {

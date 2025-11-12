@@ -19,13 +19,7 @@ type ResolvedPlaceholder = {
 
 export async function GET() {
   const { IMAGEKIT_PRIVATE_KEY, IMAGEKIT_URL_ENDPOINT } = process.env;
-
-  if (!IMAGEKIT_URL_ENDPOINT) {
-    return NextResponse.json(
-      { error: 'IMAGEKIT_URL_ENDPOINT is not configured' },
-      { status: 500 },
-    );
-  }
+  const urlEndpoint = IMAGEKIT_URL_ENDPOINT ?? '';
 
   const placeholders = listPlaceholderImages();
   const manualSet = new Set(MANUAL_PLACEHOLDERS);
@@ -137,7 +131,7 @@ const resolved: Record<PlaceholderName, ResolvedPlaceholder> = {} as Record<Plac
       if (match) {
         resolved[key] = {
           placeholder: key,
-          url: match.url || `${IMAGEKIT_URL_ENDPOINT}${match.filePath ?? ''}`,
+          url: match.url || (urlEndpoint && match.filePath ? `${urlEndpoint}${match.filePath}` : placeholder.defaultUrl),
           alt: placeholder.alt,
           filePath: match.filePath,
           name: match.name,
