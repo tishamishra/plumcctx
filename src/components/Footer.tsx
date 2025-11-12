@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { getPlaceholderImage } from "@/data/imagePlaceholders";
 
 interface FooterProps {
@@ -11,6 +12,8 @@ interface FooterProps {
 
 export default function Footer({ location }: FooterProps) {
   const footerVan = getPlaceholderImage('footerFleetVan');
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       {/* 24/7 CTA Banner with Van */}
@@ -85,6 +88,118 @@ export default function Footer({ location }: FooterProps) {
           </div>
         </div>
       </section>
+
+      {/* Footer Links */}
+      <footer className="bg-gray-900 text-gray-300 py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+            <div className="max-w-md">
+              <Link href="/" className="text-white text-2xl font-bold tracking-tight">
+                United Plumbing CCTX
+              </Link>
+              <p className="mt-4 text-sm leading-6 text-gray-400">
+                Licensed and insured plumbers serving residential and commercial customers across the United States.
+                From emergency repairs to plumbing upgrades, we bring five decades of expertise to every project.
+              </p>
+              {location ? (
+                <p className="mt-4 text-sm text-gray-400">
+                  Serving customers throughout <span className="text-white font-semibold">{location.name}, {location.state}</span> and surrounding communities.
+                </p>
+              ) : null}
+            </div>
+
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
+                <nav aria-label="Company links">
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link href="/about" className="hover:text-white transition-colors">
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services" className="hover:text-white transition-colors">
+                        Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/locations" className="hover:text-white transition-colors">
+                        Service Areas
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="hover:text-white transition-colors">
+                        Contact
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div>
+                <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">Support</h3>
+                <nav aria-label="Support links">
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link href="/services/plumber-emergency-service" className="hover:text-white transition-colors">
+                        Emergency Plumbing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/plumber-leak-detection" className="hover:text-white transition-colors">
+                        Leak Detection
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/plumber-drain-cleaning" className="hover:text-white transition-colors">
+                        Drain Cleaning
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/services/plumber-water-heater-repair" className="hover:text-white transition-colors">
+                        Water Heater Repair
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div>
+                <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">Resources</h3>
+                <nav aria-label="Resource links">
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link href="/states" className="hover:text-white transition-colors">
+                        Find Your State
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/imagekit-gallery" className="hover:text-white transition-colors">
+                        Project Gallery
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="tel:8336090936" className="hover:text-white transition-colors">
+                        24/7 Support
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/contact#request-quote" className="hover:text-white transition-colors">
+                        Request a Quote
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 border-t border-gray-800 pt-6 text-xs text-gray-500 text-center">
+            © {currentYear} United Plumbing CCTX. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
